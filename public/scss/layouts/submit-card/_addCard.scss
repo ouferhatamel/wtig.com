@@ -1,0 +1,569 @@
+.searchCard{
+    width: 100%;
+    padding: 0rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    .searchCard__ht{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .6rem;
+        background-color: $dark_clr;
+        border-radius: 50px;
+        padding: .5rem 2rem;
+        h2{
+            color: white;
+            font-size: 1.3rem;
+        }
+    }
+    .searchCard__howTo{
+        width:50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        h3{
+            cursor: pointer;
+            color: $light_clr;
+            font-size: 1rem;
+            &:hover{
+                color: $main_clr;
+            }
+        }
+    }
+    .howTo{
+        width: 40%;
+        display: none;
+        background-color: white;
+        p{
+            font-size: .9rem;
+            padding: 1rem;
+            margin-bottom: .8rem;
+            border-radius: 50px;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        }
+        span{
+            font-weight: 300;
+            font-style: italic;
+        }
+        &--shown{
+            display: block;
+        }
+    }
+    .searchCard__c-game{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem 3rem 1.5rem;
+        gap: 2.5rem;
+        margin-bottom: 2rem;
+        &--choose{
+            animation: shake .8s ease-in;
+        }
+        input{
+            display: none;
+        }
+        label{
+            width: 100%;
+            padding: 2rem 6rem;
+            opacity: .5;
+            cursor: pointer;
+            &:hover{
+                opacity: 100%;
+            }
+        }
+        .c-game__pokemon label{
+            background-image: url('../../images/logos/wytgrd-pokemon-logo.png');
+            background-position: center;
+            background-size: cover;
+            
+        }
+        .c-game__magic label{
+            background-image: url('../../images/logos/wytgrd-magic-the-gathering-logo.png');
+            background-position: center;
+            background-size: cover;
+        }
+        .c-game__yu label{
+            background-image: url('../../images/logos/wytgrd-yugioh-logo.png');
+            background-position: center;
+            background-size: cover;
+            padding: 1.5rem 6rem;
+        }
+    }
+    .searchCard__select{
+        width: 65%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .searchCard__input{
+        width: 19rem;
+        height: 100%;
+        border-radius: 50px;
+        border: 1.5px solid $dark_clr;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        position: relative;
+
+        input{
+            height: 100%;
+            width: 100%;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            font-size: 1rem;
+            //&[type="search"]::-webkit-search-decoration,
+            //&[type="search"]::-webkit-search-cancel-button,
+            //&[type="search"]::-webkit-search-results-button,
+            //&[type="search"]::-webkit-search-results-decoration { display: none; }
+        }
+    }
+    .search__input__msg{
+        display: none;
+        position: absolute;
+        left: 10px;
+        top: 110%;
+        margin-top: 5px;
+        font-weight: 400;
+        color: $sec_clr;
+    }
+    .searchCard__search{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background-color: $main_clr;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        font-weight: 400;
+        img{
+            width: 1rem;
+        }
+        &:hover{
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+        &:active{
+            background-color: $sec_clr;
+        }
+    }
+    .searchCard__suggestions{
+        width: 35%;
+        padding: 2rem 3rem;
+        list-style: none;
+        position: relative;
+        &--active{
+            display: block;
+        }
+    }
+    .suggestions__loader{
+        width: 100%;
+        height: auto;
+        display: none;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: -5%;
+        z-index: 5;
+        img{
+            width: 18rem;
+        }
+    }
+    .suggestions__list{
+        list-style: none;
+        li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            padding: 1rem 3rem;
+            border-bottom: 1.5px solid $light_clr;
+        }
+        .suggestion__cardInfo{
+            flex: 2;
+            div{
+                margin-bottom: .3rem;
+                color: $light_clr;
+                font-weight: 400;
+            }
+        }
+        img{
+            flex: 1;
+            width: 1.7rem;
+            cursor: pointer;
+        }
+        .suggestion__list__cardImg{
+            flex: 1;
+            width: 4rem;
+            border-radius: 10px;
+        }
+    }
+}
+.cards{
+    width: 100%;
+    padding: 1rem 4rem 2rem;
+    overflow-x:auto;
+    h2{
+        margin-bottom: 2rem;
+    }
+    ul{
+        width: 100%;
+        list-style: none;
+        li{
+            padding: 1rem 2rem;
+            border-bottom: 3px solid $light_clr;
+            background-color: #f1f1f1;
+        }
+        .f_line{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .c__list__head{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
+            background-color: $dark_clr;
+            border-radius: 50px;
+            padding: 1rem 2rem;
+            div{
+                color: white;
+            }
+            
+        }
+    }
+    .minimalNote__checkbox{
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        position: relative;
+        margin-bottom: .5rem;
+        span{
+            background-color: $main_clr;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            &:hover ~ .minimalNote__hint{
+                display: block;
+            }
+        }
+        .minimalNote__hint{
+            display: none;
+            width: 14rem;
+            background-color: $main_clr;
+            color: $dark_clr;
+            padding: 1rem;
+            border-radius: 10px;
+            position: absolute;
+            top: -8rem;
+            left: 30%;
+            transform: translateX(-100%);
+            font-weight: 400;
+        }
+    }
+    .minimalNote__dtls{
+        display: none;
+        select{
+            width: 6rem;
+            outline: none;
+            padding: .3rem;
+            margin: 0 2rem;
+        }
+        #return ~ label{
+            margin-right: 1.5rem;
+        }
+    }
+    .card__description{
+        flex: 1;
+        .card__name{
+            color: $dark_clr;
+            font-weight: 700;
+        }
+        div{
+            color: $light_clr;
+        }
+    }
+    .card__specifity_checkbox{
+        flex: 1;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
+        .card__check{
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+        #card__edition{
+            & + label{
+                margin-right: 2rem;
+            }
+        }
+    }
+    .card__noNotation{
+        flex: 1;
+        position: relative;
+        cursor: pointer;
+        p{
+            color: white;
+            margin-top: 3px;
+            font-size: .7rem;
+            font-weight: 300;
+        }
+        .noNotation__toggle{
+            width: 1.7rem;
+            height: 1.7rem;
+            border-radius: 50%;
+            background-color: $dark_clr;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all .3s ease;
+            z-index: 3;
+        }
+        .noNotation__stroke{
+            width: 3.5rem;
+            height: 1.75rem;
+            border-radius: 50px;
+            border: 1.5px solid $dark_clr;
+            position: absolute;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+        }
+        &--on{
+            .noNotation__toggle{
+                left: 1.8rem;
+            }
+            .noNotation__stroke{
+                background-color: $main_clr;
+            }
+        }
+        span{
+            position: absolute;
+            top: 0;
+            right: 0.5rem;
+            background-color: $main_clr;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        span:hover ~ .card__noNotation__hint{
+            display: inherit;
+        }
+        .card__noNotation__hint{
+            width: 100%;
+            background-color: $main_clr;
+            color: $dark_clr;
+            padding: 1rem;
+            border-radius: 10px;
+            position: absolute;
+            top: -6.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            font-weight: 400;
+        }
+    }
+    .card_lang{
+        flex: 1;
+        p{
+            color: white;
+            margin-top: 3px;
+            font-size: .7rem;
+            font-weight: 300;
+        }
+        select{
+            font-size: 1rem;
+            font-weight: 700;
+            background-color: transparent;
+            border: none;
+            outline: none;
+        }
+    }
+    .card__delete{
+        flex: 1;
+        img{
+            width: 1.2rem;
+            cursor: pointer;
+        }
+    }
+    .card__value{
+        flex: 1;
+        position: relative;
+        p{
+            color: white;
+            margin-top: 3px;
+            font-size: .7rem;
+            font-weight: 300;
+        }
+        input{
+            width: 60%;
+            border: 2px solid $dark_clr;
+            border-radius: 5px;
+            padding: 3px .5rem;
+            outline: none;
+            background-color: transparent;
+            padding-bottom: .5rem;
+            font-weight: 700;
+            
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button{
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            & + label{
+                font-weight: 700;
+                position: absolute;
+                left: 0;
+                pointer-events: none;
+            }
+
+            &:focus ~ label{
+                transform: translateY(-20px);
+                font-size: .8rem;
+                color: $light_clr;
+            }
+        }
+        span{
+            font-weight: 700;
+        }
+    }
+    .card__certLang{
+        flex: 1;
+        cursor: pointer;
+        position: relative;
+        p{
+            color: white;
+            margin-top: 3px;
+            font-size: .7rem;
+            font-weight: 300;
+        }
+
+        .certLang__toggle{
+            width: 1.7rem;
+            height: 1.7rem;
+            border-radius: 50%;
+            background-image: url("../../images/icons/wytgrd-langage-english-flag.svg");
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all .3s ease;
+        }
+        .certlang__stroke{
+            width: 3.5rem;
+            height: 1.75rem;
+            border-radius: 50px;
+            border: 1.5px solid $dark_clr;
+            position: absolute;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+        }
+        &--spanish .certLang__toggle{
+            left: 1.8rem;
+            background-image: url("../../images/icons/wytgrd-langage-spanish-flag.svg");
+        }
+    }
+    hr{
+        margin: 1rem 0;
+    }
+}
+.orderDtls{
+    width: 100%;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+}
+.recap{
+    width: 20rem;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    margin-bottom: 5rem;
+    &:hover{
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+    .recap__head{
+        display: flex;
+        gap: 1rem;
+        span{
+            display: none;
+            margin-top: .7rem;
+            font-weight: 300;
+            font-style: italic;
+        }
+    }
+    h3{
+        font-size: 1.8rem;
+        margin-bottom: 1.2rem;
+    }
+    .details{
+        &:not(div:last-child){
+            margin-bottom: 1rem;
+        }
+        
+        span:first-child{
+            font-weight: 700;
+        }
+        span:last-child{
+            text-align: right;
+            float: right;
+        }
+    }
+    hr{
+        border: 1px solid $light_clr;
+        margin: 1.5rem 0;
+    }
+}
+.orderDtls__left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.submitCard{
+    display: none;
+    font-weight: 700;
+    padding: 0 0 4rem;
+    &--active{
+        display: block;
+    }
+    .submitCard__insurance{
+        font-size: 1.1rem;
+    }
+    #submitCard__btn{
+        width: 8rem;
+        height: 3rem;
+        border-radius: 50px;
+        background-color: $main_clr;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+        cursor: pointer;
+        &:hover{
+            background-color: $dark_clr;
+            color: $main_clr;
+        }
+    }
+}

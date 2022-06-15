@@ -1,0 +1,32 @@
+.grading__steps{
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 2rem;
+    .grading__step{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        img{
+            width: 11rem;
+        }
+    }
+}
+//RESPONSIVE
+
+//Mobile screens
+@media only screen and (max-width: $mobile_bp){
+    .grading__steps{
+        width: 100%;
+        flex-direction: column;
+        .grading__step{
+            margin-bottom: 1rem;
+            img{
+                width: 11rem;
+            }
+        }
+    }
+}

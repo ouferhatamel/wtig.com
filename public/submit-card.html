@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="short cut icon" href="images/icons/wytgrd-abbr-logo-icon.svg">
+    <link rel="stylesheet" href="scss/pages/submit-card.css">
+    <title>Someter las cartas</title>
+</head>
+<body>
+    <!--NAVIGATION BAR-->
+    <nav class="navBar">
+        <a href="index.html"><img src="images/others/Willim&Turnergrd-NavBar-logo.svg" alt="Willim&Turnergrd-NavBar-logo"></a>
+        <div class="navBar__links">
+            <div class="navBar__detailsLinks">
+                <a href="services.html#tarifs">TARIFAS</a>
+                <a href="services.html">SERVICIOS</a>
+            </div>
+            <div class="navBar__detailsLinks">
+                <a href="submit-card.html" id='navBar__certify'>¡CERTIFICAR!</a>
+                <a href="register.html" id="navBar__login">LOGIN</a>
+                <a href="myAccount.html" id="navBar__myAccount">MI CUENTA</a>
+                <a href="mailto:info@williamturner-grading.com">CONTACTO</a>
+            </div>
+        </div>
+    </nav>
+    <!-- MENU BURGER BTN -->
+    <div class="burger">
+        <div class="burger__bar"></div>
+    </div>
+    <!--MAIN CONTENT-->
+    <main>
+        <!--STEPS-->
+        <section class="steps">
+            <div class="steps__icn steps__icn1">
+                <img src="images/icons/wytgrd-selectCards-icon.svg" alt="wytgrd-selectCards-icon">
+            </div>
+            <div class="steps__icn steps__icn2">
+                <img src="images/icons/wytgrd-completOrder-icon.svg" alt="wytgrd-completOrder-icon">
+            </div>
+            <div class="steps__icn steps__icn3">
+                <img src="images/icons/wytgrd-sendCards-icon.svg" alt="wytgrd-sendCards-icon">
+            </div>
+            <div class="steps__icn steps__icn4">
+                <img src="images/icons/wytgrd-receiveCards-icon.svg" alt="wytgrd-receiveCards-icon">
+            </div>
+        </section>
+        <!--SELECT CARD-->
+        <div class="searchCard">
+            <div class="searchCard__ht">
+                <!--Card game-->
+                <h2 class="c-game-h1">Elige un juego de cartas</h2>
+                <!--How to select a card-->
+                <div class="searchCard__howTo">
+                    <h3>¿Cuál es el procedimiento para seleccionar una tarjeta?</h3>
+                    
+                </div>
+            </div>
+            <div class="howTo">
+                <p>1.	<strong>Selecciona la colección</strong> a la que pertenece la carta que quieres gradear. <br><span>(Pokemon, Magic the Gathering, Yu-Gi-Oh!).</span></p>
+                <p>2.	Busca el nombre de la carta en <strong>inglés</strong>, entre todas ellas selecciona la ampliación en cuestión a la que pertenece. <br><span>(ej: Charizard).</span></p>
+                <p>3.	Valida la selección <strong>presionando sobre el carrito</strong>, la carta se añadirá al listado de abajo.</p>
+                <p>4.	Completa los parámetros y características de dicha carta. <br>
+                    <span>(ej: Primera edición, valor de la carta, idioma…)</span></p>
+            </div>
+            <!--Card games-->
+            <div class="searchCard__c-game">
+                <div class="c-game__pokemon">
+                    <input type="radio" id="pokemon-game" name="c-game">
+                    <label for="pokemon-game"></label>
+                </div>
+                <div class="c-game__magic">
+                    <input type="radio" id="magic-game" name="c-game">
+                <label for="magic-game"></label>
+                </div>
+                <div class="c-game__yu">
+                    <input type="radio" id="yu-game" name="c-game">
+                <label for="yu-game"></label>
+                </div>
+                
+            </div>
+            <!--Search card-->
+            <div class="searchCard__select">
+                <!--Search Input-->
+                <div class="searchCard__input">
+                    <input type="search" autocomplete="off" id="searchInput" placeholder="Introduzca el nombre de la carta">
+                    <div class="search__input__msg">No such card</div>
+                </div>
+                <!--Search button-->
+                <div class="searchCard__search">
+                    <img src="images/icons/wytgrd-search-icon.svg" alt="wytgrd-search-icon">
+                </div>
+            </div>
+            <div class="searchCard__suggestions">
+                <div class="suggestions__loader">
+                    <img src="images/others/wytgrd-loader-gif.gif" alt="wytgrd-loader-pokemon">
+                </div>
+                <ul class="suggestions__list">
+                    <!--<li>...</li>--> 
+                </ul>
+            </div>
+        </div>
+        <!--LIST OF CARDS-->
+        <div class="cards" id="cards">
+                <h2>Lista de cartas</h2>
+                <ul class="cards__list">
+                    <li class="c__list__head">
+                        <div class="card__description">CARTA</div>
+                        <div class="card__specifity_checkbox">ESPECIFICACIONES</div>
+                        <div class="card_lang">
+                            DIOMA
+                            <p>DE LA CARTA</p>
+                        </div>
+                        <div class="card__certLang">
+                            IDIOMA
+                            <p>DE CERTIFICACIÓN</p>
+                        </div>
+                        <div class="card__value">
+                            VALOR DECLARADO
+                            <p>VALOR ESTIMADO DE LA CARTA</p>
+                        </div>
+                        <div class="card__noNotation">
+                            CERTIFICACIÓN
+                            <p>SIN CALIFICACIÓN</p>
+                            <span>i</span>
+                            <div class="card__noNotation__hint">
+                                Certificar esta carta únicamente con la A de autentica
+                            </div>
+                        </div>
+                        <div class="card__delete">BORRAR</div>
+                    </li>
+                    <!--Dynamic-->
+                </ul>
+        </div>
+    </main>
+    <!--ORDER DETAILS-->
+    <div class="orderDtls">
+        <div class="orderDtls__left">
+            <!--MINIMAL NOTE-->
+            <!--Mooved inside card-->
+
+            <!--SUBMIT BUTTON-->
+            <div class="submitCard">
+                <div class="submitCard__insurance">
+                    <input type="checkbox" id="submit__insurance" checked disabled>
+                <label for="submit__insurance">SEGURO OBLIGATORIO ¡Atención, estamos aquí para proteger tu colección y asegurarnos de que te llegue sana y salva a casa!</label>
+                </div>
+                <div id="submitCard__btn">Validar</div>
+            </div>
+        </div>
+        <!--RECAP-->
+        <div class="recap">
+            <div class="recap__head">
+                <h3>Resume</h3><span>OFFRETA 01</span>
+            </div>
+            <div class="recap__details">
+            <div class="details">
+                <span id="recap__cardNumb">Cartas</span>
+                <span id="recap__cardsPrice">_</span>
+            </div>
+            <div class="details">
+                <span>Envío</span>
+                <span id="recap__delivery">_</span>
+            </div>
+            <div class="details">
+                <span >Seguros</span>
+                <span id="recap__insurance">_</span>
+            </div>
+            <!------------------------->
+            <hr>
+            <div class="details">
+                <span>TOTAL</span>
+                <span id="recap__total">_</span>
+            </div>
+            </div>
+        </div>    
+    </div>
+    <!--FOOTER-->
+    <footer class="mnFtr">
+        <div class="mnFtr__container">
+            <!--Col01-->
+            <div class="mnFtr__links mnFtr__logo">
+                <img src="images/logos/wytgrd-grading-company-logo.svg" alt="wytgrd-grading-company-logo">
+            </div>
+            <!--Col02-->
+            <div class="mnFtr__links">
+                <h4>Ayuda</h4>
+                <ul>
+                    <li><a href="services.html">Sobre nostros</a></li>
+                    <li><a href="services.html#tarifs">Tarifas</a></li>
+                    <li><a href="#">Faq</a></li>
+                    <li><a href="mailto:info@williamturner-grading.com">Contactar</a></li>
+                </ul>
+            </div>
+            <!--Col03-->
+            <div class="mnFtr__links">
+                <h4>Mi cuenta</h4>
+                <ul>
+                    <li><a href="#">Mi cuenta</a></li>
+                    <li><a href="#">Mis pedidos</a></li>
+                </ul>
+            </div>
+            <!--Col04-->
+            <div class="mnFtr__links">
+                <h4>Servicios</h4>
+                <ul>
+                    <li><a href="#">Nuestras garantias</a></li>
+                    <li><a href="submit-card.html">Certificar una carta</a></li>
+                    <li><a href="index.html#checkAuth">Verificar la autenticidad</a></li>
+                </ul>
+            </div>
+            <!--Col05-->
+            <div class="mnFtr__links">
+                <div class="mnFtr__lang">
+                    <h4>Español</h4>
+                    <img src="images/icons/wytgrd-dropdown-icon.svg" alt="wytgrd-dropdown-icon">
+                </div>
+                
+                <ul class="mnFtr__langList">
+                    <li><a href="#">English</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mntFtr__copyright">
+            <p>©2022 WYTGRD - Todos los derechos reservados | Aviso legal | Condiciones generales de venta | Politica de privacidad
+            </p>
+        </div>
+    </footer>
+    <script type="module" src="js/modules/updateNav-ui.js"></script>
+    <script type="text/javascript" src="js/submit-card.js"></script>
+</body>
+</html>

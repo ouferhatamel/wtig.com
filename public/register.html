@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="short cut icon" href="images/icons/wytgrd-abbr-logo-icon.svg">
+    <link rel="stylesheet" href="scss/pages/register.css">
+    <title>Register</title>
+    <script type="module" src="js/auth.js"></script>
+</head>
+<body>
+    <!-- Main content -->
+    <main class="forms">
+        <div class="forms__wtigLogo">
+            <a href="index.html">
+                <img src="images/logos/wtig-grading-log-whiteV.svg" alt="wtig-grading-log-whiteV">
+            </a>
+        </div>
+        <!--Form container-->
+        <div class="forms__container">
+            <!-- Form box -->
+            <div class="form__box">
+                <!--Form header-->
+                <div class="forms__header">
+                    <h1>Crear una cuenta</h1>
+                    <p>¿Ya tiene una cuenta?</p>
+                    <span>Conéctate en</span>
+                </div>
+                <!--Register form-->
+                <form id="register__form" class="forms_style">
+                    <div class="form__line">
+                        <div class="input__field">
+                            <label for="fname">Nombre</label>
+                            <input type="text" id="fname" required>
+                            <div class="errorMessage errorMessage_fname">Renseigner le nom</div>
+                        </div>
+                        <div class="input__field">
+                            <label for="lname">Apellido</label>
+                            <input type="text" id="lname" required>
+                            <div class="errorMessage errorMessage_lname">Renseigner le nom</div>
+                        </div>
+                    </div>
+                    <div class="form__line">
+                        <div class="input__field">
+                            <label for="tel">Número de teléfono</label>
+                            <input type="tel" id="tel" placeholder="+000 000 00 00 00" required>
+                            <div class="errorMessage" id="errorMessage_tel">Renseigner le nom</div>
+                        </div>
+                    </div>
+                    <div class="form__line">
+                        <div class="input__field">
+                            <label for="reg_email">Dirección de e-mail</label>
+                            <input type="email" id="reg_email" required>
+                            <div class="errorMessage" id="errorMessage_email">Renseigner le nom</div>
+                        </div>
+                        <div class="input__field">
+                            <label for="reg_pwd">Contraseña</label>
+                            <input type="password" id="reg_pwd" required>
+                            <div class="errorMessage" id="errorMessage_pwd">Renseigner le nom</div>
+                        </div>
+                    </div>
+                    <div class="form__line">
+                        <button>Regístrate</button>
+                        <div class="form__defaultError" id="register__defaultError">Default error</div>
+                    </div>
+                </form>
+                <!-- Sign-in form -->
+                <form id="signin__form" class="forms_style">
+                    <div class="form__line">
+                        <div class="input__field">
+                            <label for="sign_email">Dirección de e-mail</label>
+                            <input type="email" id="sign_email" required>
+                            <div class="errorMessage" id="s_errorMessage_email">Renseigner le nom</div>
+                        </div>
+                        <div class="input__field">
+                            <label for="sign_pwd">Contraseña</label>
+                            <input type="password" id="sign_pwd" required>
+                            <div class="errorMessage" id="s_errorMessage_pwd">Renseigner le nom</div>
+                        </div>
+                    </div>
+                    <div class="form__line">
+                        <div id="forgotten_pwd">¿Ha olvidado su contraseña?</div>
+                    </div>
+                    <div class="form__line">
+                        <button>Autentifícate</button>
+                        <div class="form__defaultError" id="signin__defaultError">Default error</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- Popup -->
+    <div class="popup">
+        <div class="popup__head">
+            <h4>Bienvenido</h4>
+            <h3>Name</h3>
+        </div>
+        <div class="popup__msg">
+            <p>
+                Su cuenta ha sido creada. <br>
+                Ha iniciado la sesión con éxito.
+            </p>
+            <a href="myAccount.html">Mi cunta</a>
+        </div>
+        <div id="popup__btn">Continuar</div>
+    </div>
+</body>
+</html>

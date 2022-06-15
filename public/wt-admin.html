@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="short cut icon" href="images/icons/wytgrd-abbr-logo-icon.svg">
+    <link rel="stylesheet" href="scss/pages/wt-admin.css">
+    <title>WTIG Administración</title>
+</head>
+<body>
+    <!-- Admin login -->
+    <div class="admin__modal" id="admin__login">
+        <img src="images/logos/wytgrd-grading-company-logo.svg" alt="wtig-grading-company-logo">
+        
+        <div class="login__form">
+            <form class="admin__forms" id="login__form">
+                <div class="form__line">
+                    <div class="input__field">
+                        <label for="loginEmail">Dirección de e-mail</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="input__field">
+                        <label for="loginPwd">Contraseña</label>
+                        <input type="password" id="loginPwd" required>
+                    </div>
+                </div>
+                <div class="form__line">
+                    <div id="forgotten_pwd">¿Ha olvidado su contraseña?</div>
+                </div>
+                <div class="form__line">
+                    <button>Autentifícate</button>
+                    <img id="login__loader" src="images/others/wytgrd-loader-gif.gif" alt="wtig-loader-gif">
+                </div>
+            </form>
+            <div class="defaultError" id="login__error">Default error</div>
+        </div>
+    </div>
+    <!------------------------------------------------------------------------------------------->
+    <!-- Admin dashboard -->
+    <div class="admin__modal" id="admin__dashboard">
+        <!-- Dashboard menu -->
+        <div class="dashboard__menu">
+            <img id="dashboard__logo" src="images/logos/wtig-grading-log-whiteV.svg" alt="wtig-grading-logo-whiteV">
+
+            <ul class="dashbord__menuList">
+                <li id="profileSec" class="selected">Perfil</li> 
+                <li id="accountsSec">Cuentas</li> 
+                <li id="ordersSec">Pedidos</li> 
+                <li id="ccSec">Tarjetas certificadas</li> 
+            </ul>
+
+            <div class="dashboard__signup">
+                <img src="images/icons/wtig-logout-white-icon.svg" alt="wtig-logout-icon">
+                <span>Cerrar la sesión</span>
+            </div>
+        </div>
+        <!-- Dashboard sections -->
+        <div class="dashboard__sections">
+            <!-- Dashboard header -->
+            <h1 class="dashboard__header">Perfil</h1>
+            <!-- Dashboard Profile section -->
+            <div class="dashboard__section" id="dashboard__profile">
+                <form class ="admin__forms" id="update__form">
+                    <div class="form__line">
+                        <div class="input__field">
+                            <label for="profileEmail">Dirección de e-mail</label>
+                            <input type="email" id="profileEmail" required>
+                            <div class="errorMessage" id="errorMessage_email">Renseigner le nom</div>
+                        </div>
+                        <div class="input__field">
+                            <label for="profilepwd">Contraseña</label>
+                            <input type="password" id="profilepwd" required>
+                            <div class="errorMessage">Renseigner le nom</div>
+                        </div>
+                        <div class="input__field">
+                            <label for="nProfilepwd">Nueva Contraseña</label>
+                            <input type="password" id="nProfilepwd" required>
+                            <div class="errorMessage">Renseigner le nom</div>
+                        </div>
+                    </div>
+                    <div class="form__line">
+                        <div id="forgotten_pwd">¿Ha olvidado su contraseña?</div>
+                    </div>
+                    <div class="form__line">
+                        <button>Actualización</button>
+                    </div>
+                </form>
+            </div>
+            <!-- Dashboard Admin accounts -->
+            <div class="dashboard__section" id="dashboard__accounts">
+                <!-- Add admin form -->
+                <form class ="admin__forms" id="accounts__form">
+                    <div class="form__line">
+                        <div class="input__field">
+                            <label for="adminEmail">Dirección de e-mail</label>
+                            <input type="email" id="adminEmail" required>
+                            <div class="errorMessage" id="errorMessage_email">Renseigner le nom</div>
+                        </div>
+                    </div>
+                    <div class="form__line" id="accounts__addAdminLoader">
+                        <img src="images/others/wytgrd-loader-gif.gif" alt="wtig-grading-loader">
+                    </div>
+                    <div class="form__line">
+                        <div class="defaultError" id="admin__error">An error has occured</div>
+                    </div>
+                    <div class="form__line">
+                        <button>Añadir admin</button>
+                    </div>
+                </form>
+                <!-- Add Admins list -->
+                <ul class="accounts__list">
+                    <li class="list__header">
+                        <span>Email</span>
+                        <span>Papel</span>
+                        <span>Última conexión</span>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- Dashboard list of orders -->
+            <div class="dashboard__section" id="dashboard__orders"></div>
+            <!-- Dashboard Add certified cards -->
+            <div class="dashboard__section" id="dashboard__certifiedCards">
+                <!-- List of cards -->
+                <button class="certifiedCards__addBtn">Añadir</button>
+                <ul class="certifiedCards__list">
+                    <li class="list__header">
+                        <span>Codigo</span>
+                        <span>ID de cliente</span>
+                        <span>Nombre</span>
+                        <span>Set</span>
+                        <span>Fecha de certificación</span>
+                        <span>Nota</span>
+                        <span>Editar</span>
+                    </li>     
+                </ul>
+                <!-- Add card form -->
+                <form class="admin__forms" id="certifiedCards__form">
+                    <div class="form__line">
+                        <div class="input__field">
+                            <label for="cardCode">Codego</label>
+                            <input type="text" id="cardCode">
+                            <div class="errorMessage">Renseigner le nom</div>
+                        </div>
+                        <div class="input__field">
+                            <label for="userId">ID de cliente</label>
+                            <input type="text" id="userId">
+                            <div class="errorMessage">Renseigner le nom</div>
+                        </div>
+                    </div>
+                    <!------------------------------------------------------->
+                    <div class="form__line">
+                        <div class="input__field">
+                            <label for="cDate">Fecha de certificación</label>
+                            <input type="date" id="cDate">
+                            <div class="errorMessage">Renseigner le nom</div>
+                        </div>
+                    </div>
+                    <!------------------------------------------------------->
+                    <div class="form__line">
+                        <div class="input__field">
+                            <label for="cGame">Juego de cartas</label>
+                            <input type="text" id="cGame">
+                            <div class="errorMessage">Renseigner le nom</div>
+                        </div>
+                    </div>
+                    <!------------------------------------------------------->
+                    <div class="form__line">
+                        <div class="input__field">
+                            <label for="ccLang">Idioma de la certificación</label>
+                            <input type="text" id="ccLang">
+                            <div class="errorMessage">Renseigner le nom</div>
+                        </div>
+                    </div>
+                    <!------------------------------------------------------->
+                    <div class="form__line">
+                        <div class="input__field">
+                            <label for="cName">Nombre de la tarjeta</label>
+                            <input type="text" id="cName">
+                            <div class="errorMessage">Renseigner le nom</div>
+                        </div>
+                        <div class="input__field">
+                            <label for="cSet">set</label>
+                            <input type="text" id="cSet">
+                            <div class="errorMessage">Renseigner le nom</div>
+                        </div>
+                    </div>
+                    <!------------------------------------------------------->
+                    <div class="form__line">
+                        <div class="input__field">
+                            <label for="cLang">Idioma del carta</label>
+                            <input type="text" id="cLang">
+                            <div class="errorMessage">Renseigner le nom</div>
+                        </div>
+                        <div class="input__field">
+                            <label for="cNote">Nota</label>
+                            <select name="note" id="cNote">
+                                <option value="1">A</option>
+                                <option value="1">1 - Poor</option>
+                                <option value="1">1,5 - Fair</option>
+                                <option value="2">2 - Good</option>
+                                <option value="2">2,5 - Good +</option>
+                                <option value="3">3 - Very good</option>
+                                <option value="3">3,5 - Very good +</option>
+                                <option value="4">4 - Very good - Excellent</option>
+                                <option value="4">4,5 - Very good - Excellent +</option>
+                                <option value="5">5 - Excellent </option>
+                                <option value="5">5,5 - Excellent +</option>
+                                <option value="6">6 - Excellent - Near mint</option>
+                                <option value="7">6.5 - Excellent - Near mint +</option>
+                                <option value="7">7 - Near mint</option>
+                                <option value="7">7,5 - Near mint +</option>
+                                <option value="8">8 - Near mint - Mint</option>
+                                <option value="8">8,5 - Near mint - Mint +</option>
+                                <option value="9">9 - Mint</option>
+                                <option value="9.5">9.5 - Gem mint</option>
+                                <option value="10">10 - Perfect</option>
+                            </select>
+                            <div class="errorMessage">Renseigner le nom</div>
+                        </div>
+                    </div>
+                    <!------------------------------------------------------->
+                    <div class="form__line">
+                        <div class="input__field">
+                            <label for="cCorners">Esquinas</label>
+                            <input type="text" id="cCorners">
+                            <div class="errorMessage">Renseigner le nom</div>
+                        </div>
+                        <div class="input__field">
+                            <label for="cEdges">Bordes</label>
+                            <input type="text" id="cEdges">
+                            <div class="errorMessage">Renseigner le nom</div>
+                        </div>
+                    </div>
+                    <!------------------------------------------------------->
+                    <div class="form__line">
+                        <div class="input__field">
+                            <label for="cCentering">Centrando</label>
+                            <input type="text" id="cCentering">
+                            <div class="errorMessage">Renseigner le nom</div>
+                        </div>
+                        <div class="input__field">
+                            <label for="cSurface">Surface</label>
+                            <input type="text" id="cSurface">
+                            <div class="errorMessage">Renseigner le nom</div>
+                        </div>
+                    </div>
+                    <!------------------------------------------------------->
+                    <div class="form__line">
+                        <button id="certifiedCard_addBtn">Añadir</button>
+                        <img id="certifiedCard__loader" src="images/others/wytgrd-loader-gif.gif" alt="wtig-loader-gif">
+                        <button id="certifiedCard_cancelBtn">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/wt-admin.js"></script>
+</body>
+</html>

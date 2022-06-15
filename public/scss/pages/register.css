@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap");
+@-webkit-keyframes shake {
+  0% {
+    transform: translate(0);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translate(0.8rem);
+    box-shadow: rgba(255, 217, 0, 0.4) 5px 5px, rgba(255, 217, 0, 0.3) 10px 10px, rgba(255, 217, 0, 0.2) 15px 15px, rgba(255, 217, 0, 0.1) 20px 20px, rgba(255, 217, 0, 0.05) 25px 25px;
+  }
+  10%, 30%, 50% {
+    transform: translate(-0.2rem);
+  }
+  70%, 100% {
+    transform: translate(0);
+  }
+}
+@keyframes shake {
+  0% {
+    transform: translate(0);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translate(0.8rem);
+    box-shadow: rgba(255, 217, 0, 0.4) 5px 5px, rgba(255, 217, 0, 0.3) 10px 10px, rgba(255, 217, 0, 0.2) 15px 15px, rgba(255, 217, 0, 0.1) 20px 20px, rgba(255, 217, 0, 0.05) 25px 25px;
+  }
+  10%, 30%, 50% {
+    transform: translate(-0.2rem);
+  }
+  70%, 100% {
+    transform: translate(0);
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  color: #202223;
+  font-weight: 500;
+}
+
+strong {
+  font-weight: 900;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* @import '../layouts/navBar'; */
+body {
+  position: relative;
+}
+
+.forms {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.646) 60%, rgba(0, 0, 0, 0.2)), url("../../images/bgd/wtig-grading-yugioh-bgd.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+.forms--darken {
+  filter: brightness(20%);
+}
+
+.forms__wtigLogo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.forms__wtigLogo img {
+  width: 15rem;
+}
+
+.forms__container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__box {
+  background-color: white;
+  padding: 3rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.form__box .forms__header h1 {
+  font-weight: 900;
+  margin-bottom: 0.8rem;
+}
+.form__box .forms__header p {
+  display: inline-block;
+}
+.form__box .forms__header span {
+  color: #d30000;
+  cursor: pointer;
+}
+.form__box .forms__header span:hover {
+  font-weight: 700;
+}
+
+.forms_style {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.forms_style .form__line {
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+}
+.forms_style .form__defaultError {
+  display: none;
+  background-color: rgb(255, 166, 166);
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+  color: #d30000;
+}
+.forms_style .input__field {
+  display: flex;
+  flex-direction: column;
+}
+.forms_style .input__field label {
+  color: #747474;
+}
+.forms_style .input__field input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 0.5rem 0.5rem;
+  border-bottom: 1.5px solid #adadad;
+}
+.forms_style .input__field input#tel {
+  width: 220%;
+}
+.forms_style .input__field .input_error {
+  border-bottom-color: #d30000;
+}
+.forms_style .input__field .errorMessage {
+  visibility: hidden;
+  color: #d30000;
+  font-weight: 400;
+  padding-top: 7px;
+  font-size: 0.8rem;
+}
+.forms_style button {
+  background-color: #fff200;
+  border: none;
+  padding: 0.9rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.forms_style button:hover {
+  background-color: #202223;
+  color: #fff200;
+}
+.forms_style #forgotten_pwd {
+  font-weight: 300;
+  font-style: italic;
+  color: #adadad;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  cursor: pointer;
+}
+.forms_style #forgotten_pwd:hover {
+  color: #202223;
+}
+
+#signin__form {
+  display: none;
+}
+
+.popup {
+  display: none;
+}
+.popup--opened {
+  background-color: white;
+  width: 20rem;
+  padding: 3rem;
+  border-radius: 40px;
+  overflow: hidden;
+  background-image: url("../../images/others/wtig-popup-header.svg");
+  background-position: top;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3rem;
+}
+.popup .popup__head {
+  margin-bottom: 4rem;
+}
+.popup .popup__head h4 {
+  font-size: 2rem;
+}
+.popup .popup__head h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.popup .popup__msg {
+  line-height: 1.6;
+}
+.popup .popup__msg a {
+  color: #adadad;
+}
+.popup .popup__msg a:hover {
+  color: #d30000;
+}
+.popup #popup__btn {
+  background-color: #fff200;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 900;
+  cursor: pointer;
+}
+.popup #popup__btn:hover {
+  background-color: #202223;
+  color: #fff200;
+}/*# sourceMappingURL=register.css.map */

@@ -1,0 +1,62 @@
+@import '../helpers/variables';
+@import '../helpers/basics';
+@import '../layouts/navBar';
+@import '../layouts/footer';
+
+body{
+    background-image: url('../../images/others/wytgrd-logo-pattern.jpg');
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 5rem;
+}
+.steps{
+    width: 80%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    margin-top: 10rem;
+
+    .steps__icn{
+        img{
+            width: 10rem;
+            opacity: .4;
+        }
+    }
+
+    .steps__icn3{
+        img{
+            opacity: 1;
+        }
+    }
+}
+.successOrder{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    h1{
+        font-size: 2rem;
+    }
+    img{
+        width: 23rem;
+    }
+    .thanks{
+        animation: shake 2s ease-in-out 0s infinite alternate;
+    }
+    .successOrder_btn{
+        width: 30%;
+        background-color: $main_clr;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 900;
+        margin-top: 1rem;
+    }
+}

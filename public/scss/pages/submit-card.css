@@ -1,0 +1,866 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap");
+@-webkit-keyframes shake {
+  0% {
+    transform: translate(0);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translate(0.8rem);
+    box-shadow: rgba(255, 217, 0, 0.4) 5px 5px, rgba(255, 217, 0, 0.3) 10px 10px, rgba(255, 217, 0, 0.2) 15px 15px, rgba(255, 217, 0, 0.1) 20px 20px, rgba(255, 217, 0, 0.05) 25px 25px;
+  }
+  10%, 30%, 50% {
+    transform: translate(-0.2rem);
+  }
+  70%, 100% {
+    transform: translate(0);
+  }
+}
+@keyframes shake {
+  0% {
+    transform: translate(0);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translate(0.8rem);
+    box-shadow: rgba(255, 217, 0, 0.4) 5px 5px, rgba(255, 217, 0, 0.3) 10px 10px, rgba(255, 217, 0, 0.2) 15px 15px, rgba(255, 217, 0, 0.1) 20px 20px, rgba(255, 217, 0, 0.05) 25px 25px;
+  }
+  10%, 30%, 50% {
+    transform: translate(-0.2rem);
+  }
+  70%, 100% {
+    transform: translate(0);
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  color: #202223;
+  font-weight: 500;
+}
+
+strong {
+  font-weight: 900;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navBar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 2000;
+}
+.navBar img {
+  height: 9rem;
+}
+.navBar .navBar__links {
+  width: 100%;
+  position: absolute;
+  top: 1.5rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 60%;
+}
+.navBar .navBar__links a {
+  color: #adadad;
+  margin-right: 0.6rem;
+}
+.navBar .navBar__links a:hover {
+  color: #fff200;
+}
+.navBar #navBar__certify {
+  color: white;
+  font-weight: 700;
+}
+.navBar #navBar__certify:hover {
+  color: #fff200;
+}
+.navBar #navBar__myAccount {
+  display: none;
+}
+.navBar #navBar__login {
+  display: none;
+}
+
+.burger {
+  visibility: hidden;
+  position: fixed;
+  top: -1.4rem;
+  right: 1.5rem;
+  z-index: 3000;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+}
+.burger .burger__bar {
+  width: 12px;
+  height: 2px;
+  border-radius: 5px;
+  background-color: #fff200;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.burger .burger__bar:before, .burger .burger__bar:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  border-radius: 5px;
+  background-color: #fff200;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.burger .burger__bar:before {
+  transform: translateY(-8px);
+}
+.burger .burger__bar:after {
+  transform: translateY(8px);
+}
+.burger.burger__bar--open .burger__bar {
+  transform: translateX(-50px);
+  background: transparent;
+}
+.burger.burger__bar--open .burger__bar::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+.burger.burger__bar--open .burger__bar::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+@media only screen and (max-width: 480px) {
+  .navBar {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .navBar img {
+    height: 6rem;
+  }
+  .navBar .navBar__links {
+    height: 100vh;
+    background-color: #202223;
+    position: relative;
+    top: -5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff200;
+    gap: 2rem;
+    -webkit-clip-path: circle(0%);
+            clip-path: circle(0%);
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  .navBar .navBar__links a {
+    color: #fff200;
+    font-size: 1.5rem;
+  }
+  .navBar .navBar__detailsLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .burger {
+    visibility: visible;
+  }
+}
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.steps {
+  width: 80%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+  margin-top: 10rem;
+}
+.steps .steps__icn img {
+  width: 10rem;
+  opacity: 0.4;
+}
+.steps .steps__icn1 img {
+  opacity: 1;
+}
+
+.searchCard {
+  width: 100%;
+  padding: 0rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.searchCard .searchCard__ht {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: #202223;
+  border-radius: 50px;
+  padding: 0.5rem 2rem;
+}
+.searchCard .searchCard__ht h2 {
+  color: white;
+  font-size: 1.3rem;
+}
+.searchCard .searchCard__howTo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.searchCard .searchCard__howTo h3 {
+  cursor: pointer;
+  color: #adadad;
+  font-size: 1rem;
+}
+.searchCard .searchCard__howTo h3:hover {
+  color: #fff200;
+}
+.searchCard .howTo {
+  width: 40%;
+  display: none;
+  background-color: white;
+}
+.searchCard .howTo p {
+  font-size: 0.9rem;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.searchCard .howTo span {
+  font-weight: 300;
+  font-style: italic;
+}
+.searchCard .howTo--shown {
+  display: block;
+}
+.searchCard .searchCard__c-game {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 3rem 1.5rem;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+.searchCard .searchCard__c-game--choose {
+  -webkit-animation: shake 0.8s ease-in;
+          animation: shake 0.8s ease-in;
+}
+.searchCard .searchCard__c-game input {
+  display: none;
+}
+.searchCard .searchCard__c-game label {
+  width: 100%;
+  padding: 2rem 6rem;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.searchCard .searchCard__c-game label:hover {
+  opacity: 100%;
+}
+.searchCard .searchCard__c-game .c-game__pokemon label {
+  background-image: url("../../images/logos/wytgrd-pokemon-logo.png");
+  background-position: center;
+  background-size: cover;
+}
+.searchCard .searchCard__c-game .c-game__magic label {
+  background-image: url("../../images/logos/wytgrd-magic-the-gathering-logo.png");
+  background-position: center;
+  background-size: cover;
+}
+.searchCard .searchCard__c-game .c-game__yu label {
+  background-image: url("../../images/logos/wytgrd-yugioh-logo.png");
+  background-position: center;
+  background-size: cover;
+  padding: 1.5rem 6rem;
+}
+.searchCard .searchCard__select {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.searchCard .searchCard__input {
+  width: 19rem;
+  height: 100%;
+  border-radius: 50px;
+  border: 1.5px solid #202223;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  position: relative;
+}
+.searchCard .searchCard__input input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1rem;
+}
+.searchCard .search__input__msg {
+  display: none;
+  position: absolute;
+  left: 10px;
+  top: 110%;
+  margin-top: 5px;
+  font-weight: 400;
+  color: #d30000;
+}
+.searchCard .searchCard__search {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #fff200;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.searchCard .searchCard__search img {
+  width: 1rem;
+}
+.searchCard .searchCard__search:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.searchCard .searchCard__search:active {
+  background-color: #d30000;
+}
+.searchCard .searchCard__suggestions {
+  width: 35%;
+  padding: 2rem 3rem;
+  list-style: none;
+  position: relative;
+}
+.searchCard .searchCard__suggestions--active {
+  display: block;
+}
+.searchCard .suggestions__loader {
+  width: 100%;
+  height: auto;
+  display: none;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: -5%;
+  z-index: 5;
+}
+.searchCard .suggestions__loader img {
+  width: 18rem;
+}
+.searchCard .suggestions__list {
+  list-style: none;
+}
+.searchCard .suggestions__list li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 3rem;
+  border-bottom: 1.5px solid #adadad;
+}
+.searchCard .suggestions__list .suggestion__cardInfo {
+  flex: 2;
+}
+.searchCard .suggestions__list .suggestion__cardInfo div {
+  margin-bottom: 0.3rem;
+  color: #adadad;
+  font-weight: 400;
+}
+.searchCard .suggestions__list img {
+  flex: 1;
+  width: 1.7rem;
+  cursor: pointer;
+}
+.searchCard .suggestions__list .suggestion__list__cardImg {
+  flex: 1;
+  width: 4rem;
+  border-radius: 10px;
+}
+
+.cards {
+  width: 100%;
+  padding: 1rem 4rem 2rem;
+  overflow-x: auto;
+}
+.cards h2 {
+  margin-bottom: 2rem;
+}
+.cards ul {
+  width: 100%;
+  list-style: none;
+}
+.cards ul li {
+  padding: 1rem 2rem;
+  border-bottom: 3px solid #adadad;
+  background-color: #f1f1f1;
+}
+.cards ul .f_line {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+.cards ul .c__list__head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background-color: #202223;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+}
+.cards ul .c__list__head div {
+  color: white;
+}
+.cards .minimalNote__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+.cards .minimalNote__checkbox span {
+  background-color: #fff200;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.cards .minimalNote__checkbox span:hover ~ .minimalNote__hint {
+  display: block;
+}
+.cards .minimalNote__checkbox .minimalNote__hint {
+  display: none;
+  width: 14rem;
+  background-color: #fff200;
+  color: #202223;
+  padding: 1rem;
+  border-radius: 10px;
+  position: absolute;
+  top: -8rem;
+  left: 30%;
+  transform: translateX(-100%);
+  font-weight: 400;
+}
+.cards .minimalNote__dtls {
+  display: none;
+}
+.cards .minimalNote__dtls select {
+  width: 6rem;
+  outline: none;
+  padding: 0.3rem;
+  margin: 0 2rem;
+}
+.cards .minimalNote__dtls #return ~ label {
+  margin-right: 1.5rem;
+}
+.cards .card__description {
+  flex: 1;
+}
+.cards .card__description .card__name {
+  color: #202223;
+  font-weight: 700;
+}
+.cards .card__description div {
+  color: #adadad;
+}
+.cards .card__specifity_checkbox {
+  flex: 1;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.cards .card__specifity_checkbox .card__check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cards .card__specifity_checkbox #card__edition + label {
+  margin-right: 2rem;
+}
+.cards .card__noNotation {
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+}
+.cards .card__noNotation p {
+  color: white;
+  margin-top: 3px;
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+.cards .card__noNotation .noNotation__toggle {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background-color: #202223;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+.cards .card__noNotation .noNotation__stroke {
+  width: 3.5rem;
+  height: 1.75rem;
+  border-radius: 50px;
+  border: 1.5px solid #202223;
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+.cards .card__noNotation--on .noNotation__toggle {
+  left: 1.8rem;
+}
+.cards .card__noNotation--on .noNotation__stroke {
+  background-color: #fff200;
+}
+.cards .card__noNotation span {
+  position: absolute;
+  top: 0;
+  right: 0.5rem;
+  background-color: #fff200;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cards .card__noNotation span:hover ~ .card__noNotation__hint {
+  display: inherit;
+}
+.cards .card__noNotation .card__noNotation__hint {
+  width: 100%;
+  background-color: #fff200;
+  color: #202223;
+  padding: 1rem;
+  border-radius: 10px;
+  position: absolute;
+  top: -6.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  font-weight: 400;
+}
+.cards .card_lang {
+  flex: 1;
+}
+.cards .card_lang p {
+  color: white;
+  margin-top: 3px;
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+.cards .card_lang select {
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.cards .card__delete {
+  flex: 1;
+}
+.cards .card__delete img {
+  width: 1.2rem;
+  cursor: pointer;
+}
+.cards .card__value {
+  flex: 1;
+  position: relative;
+}
+.cards .card__value p {
+  color: white;
+  margin-top: 3px;
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+.cards .card__value input {
+  width: 60%;
+  border: 2px solid #202223;
+  border-radius: 5px;
+  padding: 3px 0.5rem;
+  outline: none;
+  background-color: transparent;
+  padding-bottom: 0.5rem;
+  font-weight: 700;
+}
+.cards .card__value input::-webkit-outer-spin-button, .cards .card__value input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.cards .card__value input + label {
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+  pointer-events: none;
+}
+.cards .card__value input:focus ~ label {
+  transform: translateY(-20px);
+  font-size: 0.8rem;
+  color: #adadad;
+}
+.cards .card__value span {
+  font-weight: 700;
+}
+.cards .card__certLang {
+  flex: 1;
+  cursor: pointer;
+  position: relative;
+}
+.cards .card__certLang p {
+  color: white;
+  margin-top: 3px;
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+.cards .card__certLang .certLang__toggle {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background-image: url("../../images/icons/wytgrd-langage-english-flag.svg");
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.3s ease;
+}
+.cards .card__certLang .certlang__stroke {
+  width: 3.5rem;
+  height: 1.75rem;
+  border-radius: 50px;
+  border: 1.5px solid #202223;
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+.cards .card__certLang--spanish .certLang__toggle {
+  left: 1.8rem;
+  background-image: url("../../images/icons/wytgrd-langage-spanish-flag.svg");
+}
+.cards hr {
+  margin: 1rem 0;
+}
+
+.orderDtls {
+  width: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.recap {
+  width: 20rem;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  margin-bottom: 5rem;
+}
+.recap:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.recap .recap__head {
+  display: flex;
+  gap: 1rem;
+}
+.recap .recap__head span {
+  display: none;
+  margin-top: 0.7rem;
+  font-weight: 300;
+  font-style: italic;
+}
+.recap h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+.recap .details:not(div:last-child) {
+  margin-bottom: 1rem;
+}
+.recap .details span:first-child {
+  font-weight: 700;
+}
+.recap .details span:last-child {
+  text-align: right;
+  float: right;
+}
+.recap hr {
+  border: 1px solid #adadad;
+  margin: 1.5rem 0;
+}
+
+.orderDtls__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.submitCard {
+  display: none;
+  font-weight: 700;
+  padding: 0 0 4rem;
+}
+.submitCard--active {
+  display: block;
+}
+.submitCard .submitCard__insurance {
+  font-size: 1.1rem;
+}
+.submitCard #submitCard__btn {
+  width: 8rem;
+  height: 3rem;
+  border-radius: 50px;
+  background-color: #fff200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+.submitCard #submitCard__btn:hover {
+  background-color: #202223;
+  color: #fff200;
+}
+
+.mnFtr {
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mnFtr .mnFtr__container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.mnFtr .mnFtr__links {
+  width: 100%;
+}
+.mnFtr .mnFtr__links h4 {
+  width: 100%;
+  border-bottom: 2px solid black;
+  padding-bottom: 0.8rem;
+}
+.mnFtr .mnFtr__links ul {
+  list-style: none;
+  margin-top: 1.5rem;
+}
+.mnFtr .mnFtr__links ul li {
+  margin-bottom: 0.3rem;
+}
+.mnFtr .mnFtr__links ul li a {
+  color: rgb(54, 54, 54);
+}
+.mnFtr .mnFtr__links ul li a:hover {
+  color: #d30000;
+}
+.mnFtr .mnFtr__logo {
+  display: flex;
+  align-items: center;
+}
+.mnFtr .mnFtr__logo img {
+  width: 60%;
+  cursor: pointer;
+}
+.mnFtr .mnFtr__lang {
+  cursor: pointer;
+  display: flex;
+  position: relative;
+}
+.mnFtr .mnFtr__lang h4:hover {
+  color: #d30000;
+}
+.mnFtr .mnFtr__lang img {
+  width: 1rem;
+  position: absolute;
+  left: 4rem;
+  top: 0.3rem;
+}
+.mnFtr .mnFtr__langList {
+  display: none;
+}
+.mnFtr .mnFtr__langList--visible {
+  display: inherit;
+  width: 50%;
+  padding: 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.mnFtr .mntFtr__copyright {
+  font-size: 0.9rem;
+}
+.mnFtr .mntFtr__copyright p {
+  color: rgb(54, 54, 54);
+}
+
+@media only screen and (max-width: 480px) {
+  .mnFtr {
+    width: 100%;
+    padding: 1.5rem;
+  }
+  .mnFtr .mnFtr__container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mnFtr .mnFtr__links {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .mnFtr .mnFtr__links h4 {
+    font-weight: 900;
+  }
+  .mnFtr .mnFtr__links ul {
+    margin-top: 1rem;
+  }
+  .mnFtr .mnFtr__logo {
+    justify-content: center;
+  }
+  .mnFtr .mntFtr__copyright {
+    text-align: center;
+    line-height: 1.5;
+  }
+}/*# sourceMappingURL=submit-card.css.map */

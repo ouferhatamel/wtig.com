@@ -1,0 +1,307 @@
+@import '../helpers/variables';
+@import '../helpers/basics';
+
+.admin__modal{
+    width: 100%;
+    height: 100vh;
+}
+//Forms
+.admin__forms{
+    width: 16rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    .form__line:last-child{
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: flex-end;
+    }
+    .input__field{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        label{
+            color: #747474;
+        }
+        input{
+            background-color: transparent;
+            outline: none;
+            border: none;
+            padding: .5rem .5rem;
+            border-bottom: 1.5px solid $light_clr;
+        }
+        select{
+            background-color: transparent;
+            outline: none;
+            border: none;
+            border-bottom: 1.5px solid $light_clr;
+        }
+        .errorMessage{
+            visibility: hidden;
+            color: $sec_clr;
+            font-weight: 400;
+            padding-top: 7px;
+            font-size: .8rem;
+        }
+    }
+    #forgotten_pwd{
+        font-weight: 300;
+        font-style: italic;
+        color: $light_clr;
+        text-decoration-line: underline;
+        cursor: pointer;
+        &:hover{
+            color: $dark_clr;
+        }
+    }
+    button{
+        background-color: $main_clr;
+        border: none;
+        padding: 1rem;
+        border-radius: 50px;
+        font-weight: 900;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 1rem;
+        &:hover{
+            background-color: $dark_clr;
+            color: $main_clr;
+        }
+    }
+}
+//Default error
+.defaultError{
+    display: none;
+    background-color: rgb(255, 166, 166);
+    padding: .4rem .8rem;
+    border-radius: 50px;
+    color: $sec_clr;
+    text-align: center;
+}
+//Admin login modal
+#admin__login{
+    background-image: url('../../images/others/wytgrd-logo-pattern.jpg');
+    display: none;
+    //display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    img{
+        width: 10rem;
+    }
+    //Form box
+    .login__form{
+        background-color: white;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        padding: 3rem;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 10rem;
+        .form__line{
+            align-items: center;
+        }
+        #login__loader{
+            display: none;
+            margin: 5px 0 0 -4rem;
+        }
+    }
+}
+//Admin dashboard
+#admin__dashboard{
+    display: none;
+    //display: flex;
+
+    //Dashboard lateral menu
+    .dashboard__menu{
+        background-color: $dark_clr;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 0 30px 30px 0;
+        #dashboard__logo{
+            width: 10rem;
+        }
+        ul{
+            width: 12rem;
+            list-style: none;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        li{
+            color: white;
+            padding: 1.2rem 0;
+            border-top: 1px solid #adadad5f;
+            cursor: pointer;
+            &:last-child{
+                border-bottom: 1px solid #adadad5f;
+            }
+            &:hover{
+                background-color: $main_clr;
+                color: $dark_clr;
+            }
+            &.selected{
+                background-color: $main_clr;
+                color: $dark_clr;
+            }
+        }
+        .dashboard__signup{
+            cursor: pointer;
+            img{
+                width: 1.2rem;
+            }
+            span{
+                color: white;
+            }
+        }
+    }  
+    //Dashboard sections
+    .dashboard__sections{
+        margin: 5rem auto;
+        .dashboard__header{
+            margin-bottom: 4rem;
+        }
+    }
+    //Dashboard profile
+    
+    //Dashboard admin accounts
+    #dashboard__accounts{
+        display: none;
+        //display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+        #accounts__form{
+            align-items: center;
+            gap: 0.5rem;
+            .form__line{
+                justify-content: center;
+            }
+            .input__field{
+                align-items: center;
+            }
+            button{
+                padding: .8rem;
+            }
+            #accounts__addAdminLoader{
+                display: none;
+                margin: -2rem 0;
+                img{
+                    width: 7rem;
+                }
+            }
+        }
+        .accounts__list{
+            list-style: none;
+            li{
+                width: 50rem;
+                padding: 1.2rem 3rem;
+                border-bottom: 1px solid $light_clr;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                span{
+                    text-align: center;
+                    flex: 1;
+                    img{
+                        width: 1.3rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .list__header{
+                background-color: $dark_clr;
+                border-radius: 50px;
+                span{
+                    color: white;
+                }
+            }
+        }
+    }
+    //Dashboard certified cards
+    #dashboard__certifiedCards{
+        //display: flex;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        .certifiedCards__addBtn{
+            width: 10%;
+            background-color: $main_clr;
+            border: none;
+            padding: 1rem;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 1rem;
+            cursor: pointer;
+            &:hover{
+                background-color: $dark_clr;
+                color: $main_clr;
+            }
+        }
+        .certifiedCards__list{
+            list-style: none;
+            li{
+                width: 70rem;
+                padding: 1.2rem 3rem;
+                border-bottom: 1px solid $light_clr;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                span{
+                    text-align: center;
+                    flex: 1;
+                    &:nth-child(2){
+                        flex: 2;
+                    }
+                    img{
+                        width: 1.5rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .list__header{
+                background-color: $dark_clr;
+                border-radius: 50px;
+                span{
+                    color: white;
+                }
+            }
+        }
+        #certifiedCards__form{
+            display: none;
+            .form__line{
+                display: flex;
+                align-items: center;
+                gap: 3rem;               
+            }
+            select{
+                margin-top: 6px;
+                width: 290%;
+                padding-bottom: .5rem;
+            }
+            button{
+                padding: 1rem 2rem;
+            }
+            #cDate{
+                width: 155%;
+                margin-right: 1rem;
+            }
+            #ccLang, #cGame{
+                width: 155%;
+            }
+            #certifiedCard__loader{
+                display: none;
+                width: 7rem;
+                margin: 10px 0 0 -5rem;
+            }
+        }
+    }
+}

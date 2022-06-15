@@ -1,0 +1,181 @@
+@import '../helpers/variables';
+@import '../helpers/basics';
+/* @import '../layouts/navBar'; */
+
+body{
+    position: relative;
+}
+.forms{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(45deg,rgba(0, 0, 0, 0.646) 60%,rgba(0, 0, 0, 0.2)) ,url('../../images/bgd/wtig-grading-yugioh-bgd.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    &--darken{
+        filter: brightness(20%);
+        //filter: blur(5px);
+    }
+}
+.forms__wtigLogo{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    img{
+        width: 15rem;
+    }
+}
+.forms__container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form__box{
+    background-color: white;
+    padding: 3rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    .forms__header{
+        h1{
+            font-weight: 900;
+            margin-bottom: .8rem;
+        }
+        p{
+        display: inline-block;
+        }
+        span{
+            color: $sec_clr;
+            cursor: pointer;
+            &:hover{
+                font-weight: 700;
+            }
+        }
+    }
+}
+.forms_style{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    .form__line{
+        display: flex;
+        align-items: flex-end;
+        gap: 2rem;
+    }
+    .form__defaultError{
+        display: none;
+        background-color: rgb(255, 166, 166);
+        padding: .4rem .8rem;
+        border-radius: 50px;
+        color: $sec_clr;
+    }
+    .input__field{
+        display: flex;
+        flex-direction: column;
+        label{
+            color: #747474;
+        }
+        input{
+            background-color: transparent;
+            outline: none;
+            border: none;
+            padding: .5rem .5rem;
+            border-bottom: 1.5px solid $light_clr;
+            &#tel{
+                width: 220%;
+            }
+        }
+        .input_error{
+            border-bottom-color: $sec_clr;
+        }
+        .errorMessage{
+            visibility: hidden;
+            color: $sec_clr;
+            font-weight: 400;
+            padding-top: 7px;
+            font-size: .8rem;
+        }
+    }
+    button{
+        background-color: $main_clr;
+        border: none;
+        padding: .9rem 2.5rem;
+        border-radius: 50px;
+        font-weight: 900;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 1rem;
+        &:hover{
+            background-color: $dark_clr;
+            color: $main_clr;
+        }
+    }
+    #forgotten_pwd{
+        font-weight: 300;
+        font-style: italic;
+        color: $light_clr;
+        text-decoration-line: underline;
+        cursor: pointer;
+        &:hover{
+            color: $dark_clr;
+        }
+    }
+}
+#signin__form{
+    display: none;
+}
+.popup{
+    display: none;
+    &--opened{
+        background-color: white;
+        width: 20rem;
+        padding: 3rem;
+        border-radius: 40px;
+        overflow: hidden;
+        background-image: url('../../images/others/wtig-popup-header.svg');
+        background-position: top;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 3rem;
+    }
+    .popup__head{
+        margin-bottom: 4rem;
+        h4{
+            font-size: 2rem;
+        }
+        h3{
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+    }
+    .popup__msg{
+        line-height: 1.6;
+        a{
+            color: $light_clr;
+            &:hover{
+                color: $sec_clr;
+            }
+        }
+    }
+    #popup__btn{
+        background-color: $main_clr;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 900;
+        cursor: pointer;
+        &:hover{
+            background-color: $dark_clr;
+            color: $main_clr;
+        }
+    }
+}

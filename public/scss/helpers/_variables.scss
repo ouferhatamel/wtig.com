@@ -1,0 +1,52 @@
+// *******************
+// Color Variables
+// *******************
+$dark_clr: #202223;
+$light_clr: #adadad;
+$main_clr: #fff200;
+$sec_clr: #d30000;
+// *******************
+// Font-family
+// *******************
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap');
+
+// *******************
+//Animations
+// *******************
+@keyframes shake {
+    0%{
+        transform: translate(0);
+    }
+    20%,
+    40%,
+    60%,
+    80%{
+        transform: translate(.8rem);
+        box-shadow: rgba(255, 217, 0, 0.4) 5px 5px, rgba(255, 217, 0, 0.3) 10px 10px, rgba(255, 217, 0, 0.2) 15px 15px, rgba(255, 217, 0, 0.1) 20px 20px, rgba(255, 217, 0, 0.05) 25px 25px;
+    }
+    10%,
+    30%,
+    50%{
+        transform: translate(-.2rem);
+    }
+    70%,
+    100%{
+        transform: translate(0);
+    }
+
+}
+
+// *******************
+//Text sizes and styles
+// *******************
+$m_size: 1.2rem;
+$m_lineHeigt: 1.5;
+
+// *******************
+//BreakPoints
+// *******************
+$mobile_bp: 480px;
+$tablet_bp: 768px;
+$laptop_bp: 1024px;
+$desktop_bp: 1200px;
