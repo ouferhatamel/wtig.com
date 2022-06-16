@@ -113,7 +113,9 @@
 #admin__dashboard{
     display: none;
     //display: flex;
-
+    li{
+        font-size: .8rem;
+    }
     //Dashboard lateral menu
     .dashboard__menu{
         background-color: $dark_clr;
@@ -224,6 +226,45 @@
             }
         }
     }
+    //Orders dashboard
+    #dashboard__orders{
+        display: none;
+        .orders__list{
+            list-style: none;
+            li{
+                width: 75rem;
+                padding: 1.2rem 3rem;
+                border-bottom: 1px solid $light_clr;
+                display: flex;
+                justify-content: space-around;
+                gap: 1rem;
+                span{
+                    text-align: center;
+                    flex: 1;
+                    &:nth-child(3){
+                        flex: 2;
+                    }
+                    &:nth-child(6){
+                        flex: 2;
+                    }
+                    &:nth-child(7){
+                        flex: 1.5;
+                    }
+                }
+                .status{
+                    outline: none;
+                    border: none;
+                }
+            }
+            .list__header{
+                background-color: $dark_clr;
+                border-radius: 50px;
+                span{
+                    color: white;
+                }
+            }
+        }
+    }
     //Dashboard certified cards
     #dashboard__certifiedCards{
         //display: flex;
@@ -305,3 +346,4 @@
         }
     }
 }
+

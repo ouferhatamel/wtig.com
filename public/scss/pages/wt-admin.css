@@ -161,6 +161,9 @@ a {
 #admin__dashboard {
   display: none;
 }
+#admin__dashboard li {
+  font-size: 0.8rem;
+}
 #admin__dashboard .dashboard__menu {
   background-color: #202223;
   padding: 3rem;
@@ -263,6 +266,44 @@ a {
   border-radius: 50px;
 }
 #admin__dashboard #dashboard__accounts .accounts__list .list__header span {
+  color: white;
+}
+#admin__dashboard #dashboard__orders {
+  display: none;
+}
+#admin__dashboard #dashboard__orders .orders__list {
+  list-style: none;
+}
+#admin__dashboard #dashboard__orders .orders__list li {
+  width: 75rem;
+  padding: 1.2rem 3rem;
+  border-bottom: 1px solid #adadad;
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+#admin__dashboard #dashboard__orders .orders__list li span {
+  text-align: center;
+  flex: 1;
+}
+#admin__dashboard #dashboard__orders .orders__list li span:nth-child(3) {
+  flex: 2;
+}
+#admin__dashboard #dashboard__orders .orders__list li span:nth-child(6) {
+  flex: 2;
+}
+#admin__dashboard #dashboard__orders .orders__list li span:nth-child(7) {
+  flex: 1.5;
+}
+#admin__dashboard #dashboard__orders .orders__list li .status {
+  outline: none;
+  border: none;
+}
+#admin__dashboard #dashboard__orders .orders__list .list__header {
+  background-color: #202223;
+  border-radius: 50px;
+}
+#admin__dashboard #dashboard__orders .orders__list .list__header span {
   color: white;
 }
 #admin__dashboard #dashboard__certifiedCards {

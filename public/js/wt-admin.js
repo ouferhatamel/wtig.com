@@ -3,7 +3,9 @@ import { functions, httpsCallable, auth,
     signInWithEmailAndPassword,
     db, query, where, getDocs, addDoc,
     collection,
-    doc, signOut, deleteDoc, setDoc} from "./modules/firebaseSdk.js";
+    doc, signOut, deleteDoc, setDoc,
+    updateDoc
+} from "./modules/firebaseSdk.js";
 
  //Authentication states
  onAuthStateChanged(auth, user => {
@@ -140,6 +142,7 @@ menuItems.forEach((item) => {
                 selectedMenuItem(e.target);
                 showSection('dashboard__orders');
                 sectionHeader.textContent = 'Pedidos';
+                snapshotOrders();
                 break;
             case 'ccSec' :
                 selectedMenuItem(e.target);
@@ -428,7 +431,12 @@ async function snapshotCertifiedCards(){
     });
 
     //Edit a certified card
-
+    const card = cardsList.querySelector('img');
+    card.addEventListener('click', editCard);
+}
+//Edit certified card
+async function editCard(e){
+    const currentCard = e.currentTarget
 }
 //Show Card list and hide the form
 function displayCardsList(){
@@ -440,4 +448,65 @@ function displayCardsList(){
     //Show the list and the button
     ccList.style.display = 'block';
     showCForm.style.display = 'block';
+}
+//Snapshot orders list
+async function snapshotOrders(){
+    const ordersList = document.querySelector('.orders__list');
+    ordersList.innerHTML = `
+        <li class="list__header">
+            <span>Referencia</span>
+            <span>Fecha</span>
+            <span>Email/Téléfono</span>
+            <span>Número de tarjetas</span>
+            <span>Premios</span>
+            <span>Dirección</span>
+            <span>Status</span>
+        </li>
+    `;
+    const docs = await getDocs(collection(db, "orders"));
+
+    docs.forEach((doc) => {
+        //Display admin users collection data     
+        const order = document.createElement('li');
+        order.innerHTML = `
+        <span>${doc.id}</span>
+        <span>${doc.data()["date"]}</span>
+        <span>
+            ${doc.data()["email"]}<br>
+            ${doc.data().adress.tel}
+        </span>
+        <span>${doc.data()["number of cards"]}</span>
+        <span>${doc.data()["amount"]} €</span>
+        <span>
+            ${doc.data().adress.adress}<br>
+            ${doc.data().adress.complement}<br>
+            ${doc.data().adress.country} -
+            ${doc.data().adress.city} -
+            ${doc.data().adress["postal zip"]}
+        </span>
+        <select name="stauts" class="status">
+            <option value="${doc.data()["status"]}">${doc.data()["status"]}</option>
+            <option value="En espera">En espera</option>
+            <option value="En el tratamiento">En el tratamiento</option>
+            <option value="En proceso de envío">En proceso de envío</option>
+            <option value="Entregado">Entregado</option>
+            <option value="Anulado">Anulado</option>
+        </select>
+        `
+        ordersList.append(order);
+    });
+
+    const status = ordersList.querySelector('.status');
+    status.addEventListener('change', changeStatus);
+}
+//Change order status
+async function changeStatus(e){
+    const orderStatus = e.target.value;
+    const orderId = e.target.parentElement.firstElementChild.textContent;
+
+    const statusRef = doc(db, "orders", orderId);
+    await updateDoc(statusRef, {
+        status: orderStatus
+    });
+
 }
