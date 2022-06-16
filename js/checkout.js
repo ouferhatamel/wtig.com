@@ -1,4 +1,5 @@
-import{auth, onAuthStateChanged, doc, setDoc,db }from "./modules/firebaseSdk.js";
+import{auth, onAuthStateChanged, doc, setDoc,db, Timestamp }from "./modules/firebaseSdk.js";
+
 
 // Get order information from local storage
 const orderInfo= getOrderInfo();
@@ -23,7 +24,7 @@ confirmBtn.addEventListener('submit', e =>{
         const orderData = {
             "uid": user.uid,
             "email": user.email,
-            "date": "15/06/2022",
+            "date": getDate(),
             "number of cards": orderInfo["number of cards"],
             "amount": orderInfo["amount"],
             "status": orderInfo["status"],
@@ -107,4 +108,10 @@ async function addOrder(docData){
 // Calculate order reference (id)
 function orderReference(){
     return new Date().getTime().toString();
+}
+// Get today date
+function getDate(){
+    let time = Timestamp.now().toDate();
+    const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+    return time.toLocaleDateString(undefined, options);
 }

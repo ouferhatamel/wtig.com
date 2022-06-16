@@ -4,7 +4,7 @@ import { functions, httpsCallable, auth,
     db, query, where, getDocs, addDoc,
     collection,
     doc, signOut, deleteDoc, setDoc,
-    updateDoc
+    updateDoc, getDoc
 } from "./modules/firebaseSdk.js";
 
  //Authentication states
@@ -362,9 +362,10 @@ function displayLoader(prop, loaderId){
 function getInputValues(){
     return {
         code : certifiedCForm['cardCode'].value,
-        uid : certifiedCForm['userId'].value,
+        email : certifiedCForm['userEmail'].value,
+        orderRef : certifiedCForm['cOrderRef'].value,
         cDate : certifiedCForm['cDate'].value,
-        cGame : certifiedCForm['cDate'].value,
+        cGame : certifiedCForm['cGame'].value,
         ccLang : certifiedCForm['ccLang'].value,
         cName : certifiedCForm['cName'].value,
         cSet : certifiedCForm['cSet'].value,
@@ -383,8 +384,9 @@ async function addCertifiedCard(){
     const values = getInputValues();
     
     await setDoc(doc(db, "certified cards", values.code),{
-        "user id": values.uid,
+        "user id": values.email,
         "certification date": values.cDate,
+        "order reference": values.orderRef,
         "card game": values.cGame,
         "certification langage": values.ccLang,
         "card name": values.cName,
@@ -424,19 +426,71 @@ async function snapshotCertifiedCards(){
             <span>${doc.data()['certification date']}</span>
             <span>${doc.data()['grad']}</span>
             <span>
-                <img src="images/icons/wtig-edit-icon.svg" alt="wtig-edit-icon">
+                <img class="editBtn" src="images/icons/wtig-edit-icon.svg" alt="wtig-edit-icon">
             </span>
             `
         cardsList.append(card);
     });
 
     //Edit a certified card
-    const card = cardsList.querySelector('img');
-    card.addEventListener('click', editCard);
+    const cards = cardsList.querySelectorAll('.editBtn');
+    cards.forEach(card =>{
+        card.addEventListener('click', editCard);
+    });
+    
 }
 //Edit certified card
 async function editCard(e){
-    const currentCard = e.currentTarget
+    const currentCard = e.currentTarget.parentElement.parentElement;
+
+    //Get the current card id
+    const cardId = currentCard.firstElementChild.textContent;
+    console.log (cardId);
+    //Get data about that card from the collection
+    getCardData(cardId)
+    .then(cardSnap => {
+        //Print it on the form
+        PrintCardInfo(cardSnap);
+        //Show the form
+        ccList.style.display = 'none';
+        certifiedCForm.style.display = 'block';
+        showCForm.style.display = 'none';
+    })
+    
+    
+
+    //Get the data on the form (the updates)
+
+    //Update the doc
+}
+//Get card data
+async function getCardData(cardId){
+    const cardRef = doc(db, "certified cards", cardId);
+    const cardSnap = await getDoc(cardRef);
+
+    if (cardSnap.exists()) {
+        return cardSnap;
+    }
+    else {
+        // doc.data() will be undefined in this case
+        console.log("No such card");
+    }
+}
+//Print card info on the form
+function PrintCardInfo(cardSnap){
+    certifiedCForm['cardCode'].value = cardSnap.id ;
+    certifiedCForm['userId'].value = cardSnap.data()["user id"] ;
+    certifiedCForm['cDate'].value = cardSnap.data()["certification date"] ;
+    certifiedCForm['cGame'].value = cardSnap.data()["card game"] ;
+    certifiedCForm['ccLang'].value = cardSnap.data()["certification langage"] ;
+    certifiedCForm['cName'].value = cardSnap.data()["card name"] ;
+    certifiedCForm['cSet'].value = cardSnap.data()["card set"] ;
+    certifiedCForm['cLang'].value = cardSnap.data()["card langage"] ;
+    certifiedCForm['cNote'].value = cardSnap.data()["grad"] ;
+    certifiedCForm['cCorners'].value = cardSnap.data()["corners"] ;
+    certifiedCForm['cEdges'].value = cardSnap.data()["edges"] ;
+    certifiedCForm['cCentering'].value = cardSnap.data()["centering"] ;
+    certifiedCForm['cSurface'].value = cardSnap.data()["surface"] ;
 }
 //Show Card list and hide the form
 function displayCardsList(){

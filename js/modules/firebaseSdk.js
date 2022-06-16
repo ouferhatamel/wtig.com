@@ -16,7 +16,7 @@ import{
   collection,
   doc,
   getDoc, addDoc,
-  setDoc, query, where, getDocs, deleteDoc, updateDoc
+  setDoc, query, where, getDocs, deleteDoc, updateDoc, Timestamp
  } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js";
 
  import{
@@ -57,5 +57,5 @@ export {auth,
   sendPasswordResetEmail,
   functions, httpsCallable,
   query, where, getDocs, addDoc,
-  deleteDoc, updateDoc  };
+  deleteDoc, updateDoc, Timestamp  };
 ///////////////////////////////////////////////////////////////////////////////////////
