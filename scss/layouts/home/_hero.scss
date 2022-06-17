@@ -112,7 +112,7 @@
 //RESPONSIVE
 
 //Mobile screens
-@media only screen and (max-width: 480px){
+@media only screen and (max-width: $mobile_bp){
     .hero{
         margin-top: 2rem;
         .hero__certifyBtn{
