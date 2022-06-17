@@ -216,6 +216,13 @@ a {
 #admin__dashboard .dashboard__sections .dashboard__header {
   margin-bottom: 4rem;
 }
+#admin__dashboard #dashboard__profile #accounts__profileLoader {
+  display: none;
+}
+#admin__dashboard #dashboard__profile #accounts__profileLoader img {
+  width: 10rem;
+  margin: -4rem 0 -3rem 0;
+}
 #admin__dashboard #dashboard__accounts {
   display: none;
   flex-direction: column;

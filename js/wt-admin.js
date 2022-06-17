@@ -4,7 +4,9 @@ import { functions, httpsCallable, auth,
     db, query, where, getDocs, addDoc,
     collection,
     doc, signOut, deleteDoc, setDoc,
-    updateDoc, getDoc
+    updateDoc, getDoc, updatePassword, EmailAuthProvider,
+    reauthenticateWithCredential,
+
 } from "./modules/firebaseSdk.js";
 
  //Authentication states
@@ -29,6 +31,10 @@ loginForm.addEventListener('submit', (e) => {
     //Sign-in the user
     signInUser(auth);
 });
+
+//Update profile
+const updateProfileForm = document.getElementById('update__form');
+updateProfileForm.addEventListener('submit', updateAdminProfile);
 
 //Add admin account
 const addForm = document.getElementById('accounts__form');
@@ -218,6 +224,78 @@ function signInUser(auth){
         showError(err.code, "login__error");
     });
 }
+// Get current user
+function getCurrentUser(){
+    return new Promise(resolve =>{
+        onAuthStateChanged(auth, user => {
+            if(user){
+            }
+            resolve(user);
+        });
+    });
+  }
+// Update admin profile
+function updateAdminProfile(e){
+    e.preventDefault();
+
+    //Launch loader
+    displayLoader('block', 'accounts__profileLoader');
+    //Update the profile after getting uid
+    getCurrentUser().then(user => {
+    //Check user validity - Re-authentification
+    reAuthUser(user);
+  });
+}
+//Define user credencials
+function promptForCredentials(email, pwd){
+    const credential = EmailAuthProvider.credential(
+      email,
+      pwd
+    );
+    return credential;
+  }
+//Reauthentificate user
+function reAuthUser(user){
+
+    const email = updateProfileForm['profileEmail'].value;
+    const pwd = updateProfileForm['profilepwd'].value;
+    //Get user credentials
+    const credential = promptForCredentials(email,pwd);
+  
+    reauthenticateWithCredential(user, credential).then(() => {
+      // User re-authenticated.
+      console.log('User re-authenticated !');
+      //Update the profile
+      updatePwd(user);
+    }).catch((err) => {
+        
+        //Stop loader
+        displayLoader('none', 'accounts__profileLoader');
+
+        //Show error
+        showError(err.code, "profile__error");
+        console.log('An error occured when trying re-authenticated the user', err.message);
+    });
+  }
+//Update password 
+function updatePwd(user){
+
+    //Getting the new password value
+    const n_pwd = updateProfileForm['nProfilepwd'].value;
+  
+    updatePassword(user, n_pwd).then(() => {
+        //Stop loader
+        displayLoader('none', 'accounts__profileLoader');
+        //Show a message
+        showSuccess('Password updated !', 'profile__error');
+        console.log('password updated');
+    })
+    .catch((err) => {
+        displayLoader('none', 'accounts__profileLoader');
+        showError(err.code, 'profile__error');
+        console.log('Error: ', err.message);
+    });
+}
 //Logout user
 function logOut(){
     signOut(auth)
@@ -308,6 +386,18 @@ function showError(msg, errBlocId){
     const errElement = document.getElementById(errBlocId);
     errElement.style.display = 'block';
     errElement.textContent = msg;
+    //remove the message after 3 seconds
+    setTimeout(()=>{
+        errElement.style.display = 'none';
+    }, 3000);
+}
+//function show success message
+function showSuccess(msg, errBlocId){
+    const errElement = document.getElementById(errBlocId);
+    errElement.style.display = 'block';
+    errElement.textContent = msg;
+    errElement.style.backgroundColor = '#97cf8a'
+    errElement.style.color = 'green';
     //remove the message after 3 seconds
     setTimeout(()=>{
         errElement.style.display = 'none';
