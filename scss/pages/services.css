@@ -498,17 +498,32 @@ main {
     flex-direction: column;
     gap: 2rem;
   }
+  .tarifs__offers .tarifs__offer__quant h2 {
+    font-size: 2rem;
+  }
+  .tarifs__offers .tarifs__offer__quant span {
+    font-size: 0.6rem;
+  }
+  .tarifs__offers .tarifs__offer__price h2 {
+    font-size: 2rem;
+  }
+  .tarifs__offers .tarifs__offer__price span {
+    font-size: 0.6rem;
+  }
   .tarifs__offers .tarifs__offer {
     width: 80%;
-    padding: 2rem;
+    padding: 2rem 1rem;
+  }
+  .tarifs__offers .tarifs__offer h2 {
+    font-size: 1.5;
   }
   .tarifs__offers .or_more {
-    left: 17.1rem;
-    top: 8rem;
+    left: 15.8rem;
+    top: 7.8rem;
   }
   .tarifs__offers .tva {
-    left: 14.5rem;
-    top: 11.15rem;
+    left: 13.5rem;
+    top: 10rem;
   }
 
   #grading {
@@ -549,11 +564,15 @@ main {
     width: 80%;
   }
 
+  .grading__scale {
+    padding-bottom: 2rem;
+  }
   .grading__scale .grading__scale__h1 h1 {
     font-size: 20px;
   }
   .grading__scale #grading__scale__img {
     width: 90%;
+    margin-bottom: 0;
   }
 
   .grading__notations {
