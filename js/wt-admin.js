@@ -496,6 +496,7 @@ async function snapshotCertifiedCards(){
     <li class="list__header">
         <span>Codigo</span>
         <span>ID de cliente</span>
+        <span>Referencia del pedido</span>
         <span>Nombre</span>
         <span>Set</span>
         <span>Fecha de certificación</span>
@@ -511,6 +512,7 @@ async function snapshotCertifiedCards(){
         card.innerHTML = `
             <span>${doc.id}</span>
             <span>${doc.data()['user id']}</span>
+            <span>${doc.data()['order reference']}</span>
             <span>${doc.data()['card name']}</span>
             <span>${doc.data()['card set']}</span>
             <span>${doc.data()['certification date']}</span>
@@ -569,7 +571,8 @@ async function getCardData(cardId){
 //Print card info on the form
 function PrintCardInfo(cardSnap){
     certifiedCForm['cardCode'].value = cardSnap.id ;
-    certifiedCForm['userId'].value = cardSnap.data()["user id"] ;
+    certifiedCForm['userEmail'].value = cardSnap.data()["user id"] ;
+    certifiedCForm['cOrderRef'].value = cardSnap.data()["order reference"] ;
     certifiedCForm['cDate'].value = cardSnap.data()["certification date"] ;
     certifiedCForm['cGame'].value = cardSnap.data()["card game"] ;
     certifiedCForm['ccLang'].value = cardSnap.data()["certification langage"] ;
@@ -652,5 +655,9 @@ async function changeStatus(e){
     await updateDoc(statusRef, {
         status: orderStatus
     });
+
+}
+//Change order line style when status change
+function lineStyle(status){
 
 }

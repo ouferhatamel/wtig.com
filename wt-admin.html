@@ -15,19 +15,16 @@
         
         <div class="login__form">
             <form class="admin__forms" id="login__form">
-                <div class="form__line">
-                    <div class="input__field">
-                        <label for="loginEmail">Dirección de e-mail</label>
-                        <input type="email" id="loginEmail" required>
-                    </div>
-                    <div class="input__field">
-                        <label for="loginPwd">Contraseña</label>
-                        <input type="password" id="loginPwd" required>
-                    </div>
+                
+                <div class="input__field">
+                    <label for="loginEmail">Dirección de e-mail</label>
+                    <input type="email" id="loginEmail" required>
                 </div>
-                <div class="form__line">
-                    <div id="forgotten_pwd">¿Ha olvidado su contraseña?</div>
-                </div>
+                <div class="input__field">
+                    <label for="loginPwd">Contraseña</label>
+                    <input type="password" id="loginPwd" required>
+                </div> 
+                <div id="forgotten_pwd">¿Ha olvidado su contraseña?</div>
                 <div class="form__line">
                     <button>Autentifícate</button>
                     <img id="login__loader" src="images/others/wytgrd-loader-gif.gif" alt="wtig-loader-gif">
@@ -62,28 +59,26 @@
             <!-- Dashboard Profile section -->
             <div class="dashboard__section" id="dashboard__profile">
                 <form class ="admin__forms" id="update__form">
-                    <div class="form__line">
-                        <div class="input__field">
-                            <label for="profileEmail">Dirección de e-mail</label>
-                            <input type="email" id="profileEmail" required>
-                        </div>
-                        <div class="input__field">
-                            <label for="profilepwd">Contraseña</label>
-                            <input type="password" id="profilepwd" required>
-                        </div>
-                        <div class="input__field">
-                            <label for="nProfilepwd">Nueva Contraseña</label>
-                            <input type="password" id="nProfilepwd" required>
-                        </div>
+                    <div class="input__field">
+                        <label for="profileEmail">Dirección de e-mail</label>
+                        <input type="email" id="profileEmail" required>
                     </div>
+                    <div class="input__field">
+                        <label for="profilepwd">Contraseña</label>
+                        <input type="password" id="profilepwd" required>
+                    </div>
+                    <div class="input__field">
+                        <label for="nProfilepwd">Nueva Contraseña</label>
+                        <input type="password" id="nProfilepwd" required>
+                    </div>
+            
                     <div class="form__line">
                         <div id="forgotten_pwd">¿Ha olvidado su contraseña?</div>
                     </div>
-                    <div class="form__line" id="accounts__profileLoader">
-                        <img src="images/others/wytgrd-loader-gif.gif" alt="wtig-grading-loader">
-                    </div>
                     <div class="form__line">
                         <button>Actualización</button>
+                        <img id="accounts__profileLoader" src="images/others/wytgrd-loader-gif.gif" alt="wtig-grading-loader">
+                    
                     </div>
                     <div class="form__line">
                         <div class="defaultError" id="profile__error">An error has occured</div>
@@ -143,6 +138,7 @@
                     <li class="list__header">
                         <span>Codigo</span>
                         <span>ID de cliente</span>
+                        <span>Referencia del pedido</span>
                         <span>Nombre</span>
                         <span>Set</span>
                         <span>Fecha de certificación</span>
@@ -273,7 +269,7 @@
                     <div class="form__line">
                         <button id="certifiedCard_addBtn">Añadir</button>
                         <img id="certifiedCard__loader" src="images/others/wytgrd-loader-gif.gif" alt="wtig-loader-gif">
-                        <button id="certifiedCard_cancelBtn">Cancelar</button>
+                        <div id="certifiedCard_cancelBtn">Cancelar</div>
                     </div>
                 </form>
             </div>

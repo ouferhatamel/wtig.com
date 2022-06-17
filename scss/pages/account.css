@@ -424,6 +424,8 @@ main {
 }
 .modals #modals__order ul {
   list-style: none;
+  display: flex;
+  flex-direction: column-reverse;
 }
 .modals #modals__order li {
   width: 50rem;
@@ -440,6 +442,7 @@ main {
 .modals #modals__order #orders__header {
   background-color: #202223;
   border-radius: 50px;
+  order: 1;
 }
 .modals #modals__order #orders__header p {
   color: white;

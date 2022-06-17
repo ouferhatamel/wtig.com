@@ -145,6 +145,8 @@ main{
         gap: 3rem;
         ul{
             list-style: none;
+            display: flex;
+            flex-direction: column-reverse;
         }
         li{
             width: 50rem;
@@ -161,6 +163,7 @@ main{
         #orders__header{
             background-color: $dark_clr;
             border-radius: 50px;
+            order: 1;
             p{
                 color: white;
             }

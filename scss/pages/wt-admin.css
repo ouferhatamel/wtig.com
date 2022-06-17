@@ -59,13 +59,12 @@ a {
   width: 16rem;
   display: flex;
   flex-direction: column;
-  gap: 1.3rem;
+  gap: 2rem;
 }
-.admin__forms .form__line:last-child {
+.admin__forms .form__line {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
   align-items: flex-end;
+  gap: 2rem;
 }
 .admin__forms .input__field {
   width: 100%;
@@ -150,22 +149,24 @@ a {
   flex-direction: column;
   gap: 3rem;
 }
-#admin__login .login__form .form__line {
-  align-items: center;
-}
 #admin__login .login__form #login__loader {
   display: none;
-  margin: 5px 0 0 -4rem;
+  width: 7rem;
+  margin: 0 0 0 -1rem;
+  transform: translate(-1.5rem, 10px);
 }
 
 #admin__dashboard {
   display: none;
+  position: relative;
 }
 #admin__dashboard li {
   font-size: 0.8rem;
 }
 #admin__dashboard .dashboard__menu {
+  position: fixed;
   background-color: #202223;
+  height: 100%;
   padding: 3rem;
   display: flex;
   flex-direction: column;
@@ -211,17 +212,22 @@ a {
   color: white;
 }
 #admin__dashboard .dashboard__sections {
-  margin: 5rem auto;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  margin-left: 18rem;
 }
 #admin__dashboard .dashboard__sections .dashboard__header {
-  margin-bottom: 4rem;
+  margin: 5rem 0 4rem 0rem;
+}
+#admin__dashboard #dashboard__profile {
+  display: flex;
+  justify-content: center;
 }
 #admin__dashboard #dashboard__profile #accounts__profileLoader {
   display: none;
-}
-#admin__dashboard #dashboard__profile #accounts__profileLoader img {
-  width: 10rem;
-  margin: -4rem 0 -3rem 0;
+  width: 7rem;
+  transform: translate(-2.5rem, 10px);
 }
 #admin__dashboard #dashboard__accounts {
   display: none;
@@ -251,6 +257,8 @@ a {
 }
 #admin__dashboard #dashboard__accounts .accounts__list {
   list-style: none;
+  display: flex;
+  flex-direction: column-reverse;
 }
 #admin__dashboard #dashboard__accounts .accounts__list li {
   width: 50rem;
@@ -271,15 +279,20 @@ a {
 #admin__dashboard #dashboard__accounts .accounts__list .list__header {
   background-color: #202223;
   border-radius: 50px;
+  order: 1;
 }
 #admin__dashboard #dashboard__accounts .accounts__list .list__header span {
   color: white;
 }
 #admin__dashboard #dashboard__orders {
   display: none;
+  justify-content: center;
 }
 #admin__dashboard #dashboard__orders .orders__list {
   list-style: none;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
 }
 #admin__dashboard #dashboard__orders .orders__list li {
   width: 75rem;
@@ -309,6 +322,7 @@ a {
 #admin__dashboard #dashboard__orders .orders__list .list__header {
   background-color: #202223;
   border-radius: 50px;
+  order: 1;
 }
 #admin__dashboard #dashboard__orders .orders__list .list__header span {
   color: white;
@@ -364,30 +378,34 @@ a {
   color: white;
 }
 #admin__dashboard #dashboard__certifiedCards #certifiedCards__form {
+  width: 35%;
   display: none;
+  transform: translateY(-3rem);
+  font-size: 0.8rem;
 }
-#admin__dashboard #dashboard__certifiedCards #certifiedCards__form .form__line {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
+#admin__dashboard #dashboard__certifiedCards #certifiedCards__form input {
+  padding: 2px;
 }
 #admin__dashboard #dashboard__certifiedCards #certifiedCards__form select {
   margin-top: 15px;
-  width: 290%;
-  padding-bottom: 0.5rem;
+  padding-bottom: 2px;
 }
 #admin__dashboard #dashboard__certifiedCards #certifiedCards__form button {
   padding: 1rem 2rem;
-}
-#admin__dashboard #dashboard__certifiedCards #certifiedCards__form #cDate {
-  width: 155%;
-  margin-right: 1rem;
-}
-#admin__dashboard #dashboard__certifiedCards #certifiedCards__form #ccLang, #admin__dashboard #dashboard__certifiedCards #certifiedCards__form #cGame, #admin__dashboard #dashboard__certifiedCards #certifiedCards__form #cOrderRef {
-  width: 155%;
 }
 #admin__dashboard #dashboard__certifiedCards #certifiedCards__form #certifiedCard__loader {
   display: none;
   width: 7rem;
   margin: 10px 0 0 -5rem;
+}
+#admin__dashboard #dashboard__certifiedCards #certifiedCards__form #certifiedCard_cancelBtn {
+  background-color: #fff200;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 900;
+}
+#admin__dashboard #dashboard__certifiedCards #certifiedCards__form #certifiedCard_cancelBtn:hover {
+  background-color: #202223;
+  color: #fff200;
 }/*# sourceMappingURL=wt-admin.css.map */
