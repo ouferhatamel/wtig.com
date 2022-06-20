@@ -150,6 +150,7 @@ a {
     height: 6rem;
   }
   .navBar .navBar__links {
+    display: none;
     height: 100vh;
     background-color: #202223;
     position: relative;

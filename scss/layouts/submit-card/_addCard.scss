@@ -5,6 +5,7 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    z-index: 1000;
     .searchCard__ht{
         width: 100%;
         display: flex;
@@ -29,6 +30,7 @@
             cursor: pointer;
             color: $light_clr;
             font-size: 1rem;
+            text-align: center;
             &:hover{
                 color: $main_clr;
             }
@@ -176,11 +178,12 @@
         left: -5%;
         z-index: 5;
         img{
-            width: 18rem;
+            width: 10rem;
         }
     }
     .suggestions__list{
         list-style: none;
+        width: 100%;
         li{
             display: flex;
             justify-content: center;
@@ -212,7 +215,7 @@
 .cards{
     width: 100%;
     padding: 1rem 4rem 2rem;
-    overflow-x:auto;
+    overflow-x: scroll;
     h2{
         margin-bottom: 2rem;
     }
@@ -565,5 +568,80 @@
             background-color: $dark_clr;
             color: $main_clr;
         }
+    }
+}
+
+//RESPONSIVE
+
+//Mobile screens
+@media only screen and (max-width: $mobile_bp){
+    .searchCard{
+        padding: 0rem;
+        .searchCard__ht{
+            width: 90%;
+            padding: 1rem 2rem;
+            h2{
+                font-size: 1.3rem;
+            }
+        }
+        .howTo{
+            width: 80%;
+            display: none;
+            p{
+                font-size: .9rem;
+                padding: 1rem;
+                margin-bottom: .8rem;
+                border-radius: 50px;
+                box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            }
+            span{
+                font-weight: 300;
+                font-style: italic;
+            }
+            &--shown{
+                display: block;
+            }
+        }
+        .searchCard__c-game{
+            gap: 1.5rem;
+            transform: scale(.6);
+        }
+        .searchCard__howTo{
+            width:100%;
+        }
+        .searchCard__select{
+            width: 100%;
+            gap: 1.5rem;
+        }
+        .searchCard__input{
+            width: 70%;
+            display: flex;
+        }
+        .searchCard__suggestions{
+            width: 80%;
+            padding: 2rem 0rem;
+        }
+        .suggestions__list{
+            li{
+                gap: 2rem;
+                padding: 1rem 0;
+            }
+        }
+    }
+    .cards{
+        padding: 1rem 2rem 2rem;
+        ul{
+            width: 350%;
+            font-size: .9rem;
+            li{
+                padding: 1rem;
+            }
+        }
+    }
+    .orderDtls{
+        width: 100%;
+        padding: 2rem 4rem;
+        flex-direction: column;
+        align-items: center;
     }
 }
