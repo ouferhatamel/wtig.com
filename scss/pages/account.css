@@ -341,6 +341,10 @@ main {
   flex-direction: column;
   gap: 3rem;
 }
+.modals .forms__header {
+  display: flex;
+  flex-direction: column;
+}
 .modals .forms__header p {
   font-weight: 300;
   font-style: italic;
@@ -351,7 +355,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  overflow-x: hidden;
 }
 .modals #modals__form .form__line {
   display: flex;
@@ -372,12 +375,6 @@ main {
   border: none;
   padding: 0.5rem 0.5rem;
   border-bottom: 1.5px solid #adadad;
-}
-.modals #modals__form .input__field input#tel {
-  width: 220%;
-}
-.modals #modals__form .input__field input#email {
-  width: 220%;
 }
 .modals #modals__form .input__field .errorMessage {
   visibility: hidden;
@@ -447,4 +444,57 @@ main {
 }
 .modals #modals__order #orders__header p {
   color: white;
+}
+
+@media only screen and (max-width: 480px) {
+  main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 5rem 0;
+  }
+
+  .menu {
+    align-items: center;
+    gap: 3rem;
+    margin-top: 5rem;
+  }
+  .menu .menu__item {
+    width: 17rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .modals {
+    width: 100%;
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: scroll;
+  }
+  .modals #modals__perso {
+    margin-top: 4rem;
+    width: 100%;
+  }
+  .modals .forms__header {
+    text-align: center;
+    align-items: center;
+  }
+  .modals .forms__header h1 {
+    font-size: 1.6rem;
+  }
+  .modals #modals__form .input__field input {
+    width: 100%;
+  }
+  .modals #modals__order {
+    margin-top: 4rem;
+    width: 100%;
+  }
+  .modals #modals__order .orders__header h1 {
+    font-size: 1.6rem;
+  }
+  .modals #modals__order ul {
+    width: 100%;
+  }
 }/*# sourceMappingURL=account.css.map */

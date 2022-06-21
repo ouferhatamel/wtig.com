@@ -62,6 +62,9 @@ main{
         gap: 3rem;
     }
     .forms__header{
+        display: flex;
+        flex-direction: column;
+        
         p{
             font-weight: 300;
             font-style: italic;
@@ -73,7 +76,6 @@ main{
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        overflow-x: hidden;
         .form__line{
             display: flex;
             align-items: flex-end;
@@ -92,12 +94,6 @@ main{
                 border: none;
                 padding: .5rem .5rem;
                 border-bottom: 1.5px solid $light_clr;
-                &#tel{
-                    width: 220%;
-                }
-                &#email{
-                    width: 220%;
-                }
             }
             .errorMessage{
                 visibility: hidden;
@@ -166,6 +162,66 @@ main{
             order: 1;
             p{
                 color: white;
+            }
+        }
+    }
+}
+
+//RESPONSIVE
+
+//Mobile screens
+@media only screen and (max-width: $mobile_bp){
+    main{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        padding: 5rem 0;
+    }
+    .menu{
+        align-items: center;
+        gap: 3rem;
+        margin-top: 5rem;
+        .menu__item{
+            width: 17rem;
+            padding: 1.5rem 1rem;
+        }
+    }
+    .modals{
+        width: 100%;
+        padding: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: scroll;
+        #modals__perso{
+            margin-top: 4rem;
+            width: 100%;
+        }
+        .forms__header{
+            text-align: center;
+            align-items: center;
+            h1{
+                font-size: 1.6rem;
+            }
+        }
+        #modals__form{
+            .input__field{
+                input{
+                    width: 100%; 
+                }
+            }
+        }
+        #modals__order{
+            margin-top: 4rem;
+            width: 100%;
+            .orders__header{
+                h1{
+                    font-size: 1.6rem;
+                }
+            }
+            ul{
+                width: 100%;
             }
         }
     }
