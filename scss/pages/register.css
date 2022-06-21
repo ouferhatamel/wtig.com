@@ -53,6 +53,7 @@ a {
 /* @import '../layouts/navBar'; */
 body {
   position: relative;
+  overflow-x: hidden;
 }
 
 .forms {
@@ -127,6 +128,7 @@ body {
 .forms_style .input__field {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .forms_style .input__field label {
   color: #747474;
@@ -137,9 +139,6 @@ body {
   border: none;
   padding: 0.5rem 0.5rem;
   border-bottom: 1.5px solid #adadad;
-}
-.forms_style .input__field input#tel {
-  width: 220%;
 }
 .forms_style .input__field .input_error {
   border-bottom-color: #d30000;
@@ -232,4 +231,39 @@ body {
 .popup #popup__btn:hover {
   background-color: #202223;
   color: #fff200;
+}
+
+@media only screen and (max-width: 480px) {
+  .forms {
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    overflow: hidden;
+  }
+
+  .forms__wtigLogo {
+    flex: none;
+  }
+  .forms__wtigLogo img {
+    width: 10rem;
+  }
+
+  .forms__container {
+    flex: none;
+    display: flex;
+    width: 100%;
+  }
+
+  .form__box {
+    padding: 3rem 1.5rem;
+    width: 80%;
+  }
+
+  .forms_style {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+  .forms_style button {
+    padding: 0.9rem 2rem;
+  }
 }/*# sourceMappingURL=register.css.map */

@@ -4,6 +4,7 @@
 
 body{
     position: relative;
+    overflow-x: hidden;
 }
 .forms{
     width: 100%;
@@ -75,6 +76,7 @@ body{
     .input__field{
         display: flex;
         flex-direction: column;
+        overflow: hidden;
         label{
             color: #747474;
         }
@@ -84,9 +86,6 @@ body{
             border: none;
             padding: .5rem .5rem;
             border-bottom: 1.5px solid $light_clr;
-            &#tel{
-                width: 220%;
-            }
         }
         .input_error{
             border-bottom-color: $sec_clr;
@@ -176,6 +175,40 @@ body{
         &:hover{
             background-color: $dark_clr;
             color: $main_clr;
+        }
+    }
+}
+
+//RESPONSIVE
+
+//Mobile screens
+@media only screen and (max-width: $mobile_bp){
+    .forms{
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+        overflow: hidden;
+    }
+    .forms__wtigLogo{
+        flex:none;
+        img{
+            width: 10rem;
+        }
+    }
+    .forms__container{
+        flex: none;
+        display: flex;
+        width: 100%;
+    }
+    .form__box{
+        padding: 3rem 1.5rem;
+        width: 80%;
+    }
+    .forms_style{
+        gap: 1rem;
+        font-size: .9rem;
+        button{
+            padding: .9rem 2rem;
         }
     }
 }

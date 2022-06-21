@@ -802,7 +802,7 @@ main {
   }
   .searchCard .searchCard__c-game {
     gap: 1.5rem;
-    transform: scale(0.6);
+    transform: scale(0.5);
   }
   .searchCard .searchCard__howTo {
     width: 100%;
