@@ -184,6 +184,7 @@ body{
 //Mobile screens
 @media only screen and (max-width: $mobile_bp){
     .forms{
+        height: auto;
         flex-direction: column;
         justify-content: center;
         gap: 3rem;

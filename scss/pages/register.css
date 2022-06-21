@@ -235,6 +235,7 @@ body {
 
 @media only screen and (max-width: 480px) {
   .forms {
+    height: auto;
     flex-direction: column;
     justify-content: center;
     gap: 3rem;
