@@ -1,5 +1,17 @@
-import{auth, onAuthStateChanged, doc, setDoc,db, Timestamp }from "./modules/firebaseSdk.js";
+import{auth, onAuthStateChanged, doc, setDoc,db, Timestamp,
+    httpsCallable, functions }from "./modules/firebaseSdk.js";
 
+const checkout = document.getElementById('checkoutTest');
+const createStripeCheckout = httpsCallable(functions, 'createStripeCheckout');
+const stripe = Stripe('pk_test_51Kpal1DQVI25pS1FnVuZEv2Kp2ce0ik18LlZDLY3aqOxAD5TAfwpsH9Yeic6bJv4DhUHCMheK3yMJ9shJHF3T9Xb006ZPcZtna')
+
+checkout.addEventListener('click', (e) => {
+    createStripeCheckout({qt: 3})
+      .then(response => {
+        const sessionId = response.data.id
+        stripe.redirectToCheckout({ sessionId: sessionId })
+      })
+});
 
 // Get order information from local storage
 const orderInfo= getOrderInfo();

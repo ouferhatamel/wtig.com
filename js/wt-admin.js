@@ -613,7 +613,7 @@ async function snapshotOrders(){
     const docs = await getDocs(collection(db, "orders"));
 
     docs.forEach((doc) => {
-        //Display admin users collection data     
+        //Display order collection data     
         const order = document.createElement('li');
         order.innerHTML = `
         <span>${doc.id}</span>

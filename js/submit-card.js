@@ -1,3 +1,5 @@
+import{auth, onAuthStateChanged, doc, setDoc,db, Timestamp,
+    httpsCallable, functions }from "./modules/firebaseSdk.js";
 
 const suggList = document.querySelector('.suggestions__list');
 const cardContainer = document.querySelector('.cards__list');
@@ -7,7 +9,7 @@ const cardPrice = document.getElementById('recap__cardsPrice');
 const deliveryPrice = document.getElementById('recap__delivery');
 const totalPrice = document.getElementById('recap__total');
 const validateCnt = document.querySelector('.submitCard');
-const insuranceCheck = document.getElementById('submit__insurance');
+//const insuranceCheck = document.getElementById('submit__insurance');
 const insrPrice = document.getElementById('recap__insurance');
 const loader = document.querySelector('.suggestions__loader');
 const inputCnt = document.querySelector('.searchCard__input');
@@ -22,8 +24,8 @@ let extension = '';
 let cardNumber = 0;
 let crdPrice = 0;
 let unitPrice = 10.15;
-let delivery = 11.07;
-let insurance = 0;
+let delivery = 10;
+let insurance = 5;
 let total = 0;
 
 //-----------SEARCH CARDS------------
@@ -72,8 +74,8 @@ yuGame.addEventListener('click', ()=>{
 
 //Store order info on local storage
 const validate = document.getElementById('submitCard__btn');
-validate.addEventListener('click', storeOrderInfo);
 
+validate.addEventListener('click', checkout);
 
 ///////////////////
 //FUNCTIONS////////
@@ -351,8 +353,10 @@ function addItem(e){
     if(cardNumber > 0)
     deliveryPrice.innerHTML = `${delivery} €`;
 
+    //Update insurance price
+    insrPrice.innerHTML= `${insurance} €`;
     //Check if insurance is checked and add it to the invoice
-    insuranceCheck.addEventListener('change', insurranceChecker);
+    //insuranceCheck.addEventListener('change', insurranceChecker);
 
     //Update the total
     total = TotalCalc();
@@ -468,7 +472,7 @@ function TotalCalc(){
     }
         
 }
-function insurranceChecker(e){
+/* function insurranceChecker(e){
     if(e.target.checked){
         console.log(insurance);
         insurance=9.48;
@@ -482,9 +486,10 @@ function insurranceChecker(e){
         totalPrice.innerHTML = `${total} €`;
     }
         
-}
-//Store order info on local storage
-function storeOrderInfo(){
+} */
+
+// Get order info object
+function getOrderInfo(){
     const orderItems = cardContainer.querySelectorAll('.cardItem');
     const orderInfo = {
         "number of cards": cardNumber,
@@ -545,11 +550,22 @@ function storeOrderInfo(){
         orderInfo.cards= cards;
         i++;
     });
-    console.log(orderInfo);
-    
-    const orderInfoString = JSON.stringify(orderInfo);
+
+    return orderInfo;
+}
+// Checkout function
+function checkout(){
+    const orderData = getOrderInfo();
+
+    //Store order data to local storage 
+    const orderInfoString = JSON.stringify(orderData);
     localStorage.setItem('orderInfo', orderInfoString);
 
-    //Redirect to checkout
-    location.href = "checkout.html";
+    const createStripeCheckout = httpsCallable(functions, 'createStripeCheckout');
+    const stripe = Stripe('pk_test_51Kpal1DQVI25pS1FnVuZEv2Kp2ce0ik18LlZDLY3aqOxAD5TAfwpsH9Yeic6bJv4DhUHCMheK3yMJ9shJHF3T9Xb006ZPcZtna');
+    createStripeCheckout({oD: orderData})
+        .then(response => {
+        const sessionId = response.data.id;
+        stripe.redirectToCheckout({ sessionId: sessionId });
+      });
 }
