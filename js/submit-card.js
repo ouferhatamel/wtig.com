@@ -77,6 +77,9 @@ const validate = document.getElementById('submitCard__btn');
 
 validate.addEventListener('click', checkout);
 
+const adressForm = document.getElementById('adressForm');
+adressForm.addEventListener('submit', checkout)
+
 ///////////////////
 //FUNCTIONS////////
 ///////////////////
@@ -488,6 +491,18 @@ function TotalCalc(){
         
 } */
 
+// Get adress info
+function getAdress(){
+    const adressForm = document.getElementById('adressForm');
+    return {
+        "adress": adressForm['adress'].value,
+        "complement": adressForm['complement'].value,
+        "postal zip": adressForm['cp'].value,
+        "city": adressForm['city'].value,
+        "country": adressForm['county'].value,
+        "tel": adressForm['tel'].value
+    }
+}
 // Get order info object
 function getOrderInfo(){
     const orderItems = cardContainer.querySelectorAll('.cardItem');
@@ -495,7 +510,8 @@ function getOrderInfo(){
         "number of cards": cardNumber,
         "amount": total,
         "unit price": unitPrice,
-        "status": "En espera "   
+        "status": "En espera ",
+        "adress": getAdress()   
     };
     const cards = {};
 
@@ -554,7 +570,9 @@ function getOrderInfo(){
     return orderInfo;
 }
 // Checkout function
-function checkout(){
+function checkout(e){
+    e.preventDefault();
+    
     const orderData = getOrderInfo();
 
     //Store order data to local storage 

@@ -141,9 +141,47 @@
             <div class="submitCard">
                 <div class="submitCard__insurance">
                     <input type="checkbox" id="submit__insurance" checked disabled>
-                <label for="submit__insurance">SEGURO OBLIGATORIO ¡Atención, estamos aquí para proteger tu colección y asegurarnos de que te llegue sana y salva a casa!</label>
+                    <label for="submit__insurance">SEGURO OBLIGATORIO ¡Atención, estamos aquí para proteger tu colección y asegurarnos de que te llegue sana y salva a casa!</label>
                 </div>
-                <div id="submitCard__btn">Validar</div>
+                <!--Adress form-->
+                <div id="orderInfo__adressForm">
+                    <h3>Dirección de envío</h3>
+                    <form action="" name="adressForm" id="adressForm">
+                        <div class="input__field">
+                            <label for="adress">Dirección</label>
+                            <input type="text" id="adress" name="adress" required>
+                        </div>
+                        <div class="input__field">
+                            <label for="complement">Complemento (opcional)</label>
+                            <input type="text" id="complement" name="complement" required>
+                        </div>
+                        <div class="form__line">
+                            <div class="input__field">
+                                <label for="cp">Código postal</label>
+                                <input type="text" id="cp" name="cp">
+                            </div>
+                            <div class="input__field">
+                                <label for="city">Ciudad</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                        </div>
+                        <div class="form__line">
+                            <Select name="country" id="county" required>
+                                <option value="España">País</option>
+                                <option value="España">España</option>
+                                <option value="Francia">Francia</option>
+                                <option value="Portugal">Portugal</option>
+                                <option value="Rusia">Rusia</option>
+                            </Select>
+                            <div class="input__field">
+                                <label for="tel">Teléfono</label>
+                                <input type="tel" id="tel" name="tel" required>
+                            </div>
+                        </div>
+                        <button>Validar</button>
+                    </form>
+                </div>
+                
             </div>
         </div>
         <!--RECAP-->
@@ -173,6 +211,7 @@
             </div>
         </div>    
     </div>
+    
     <!--FOOTER-->
     <footer class="mnFtr">
         <div class="mnFtr__container">

@@ -16,7 +16,7 @@ getCurrentUser()
         "amount": orderInfo["amount"],
         "status": orderInfo["status"],
         "cards list": orderInfo["cards"],
-        //"adress": adressInfo
+        "adress": orderInfo["adress"]
     };
     //Store data in the collection
     addOrder(orderData)

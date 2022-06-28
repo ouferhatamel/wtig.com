@@ -759,12 +759,61 @@ main {
   padding: 0 0 4rem;
 }
 .submitCard--active {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 .submitCard .submitCard__insurance {
   font-size: 1.1rem;
 }
-.submitCard #submitCard__btn {
+
+#orderInfo__adressForm {
+  width: 40%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding: 2rem;
+  border-radius: 15px;
+}
+#orderInfo__adressForm h3 {
+  font-weight: 700;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #adadad;
+}
+#orderInfo__adressForm form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#orderInfo__adressForm form input {
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 0.8rem 0.5rem 0.5rem;
+  border-bottom: 1.5px solid #202223;
+}
+#orderInfo__adressForm .input__field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#orderInfo__adressForm .form__line {
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+}
+#orderInfo__adressForm select {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1.5px solid #202223;
+  font-size: 1rem;
+  padding-bottom: 2rem;
+}
+#orderInfo__adressForm button {
+  outline: none;
+  border: none;
   width: 8rem;
   height: 3rem;
   border-radius: 50px;
@@ -775,7 +824,7 @@ main {
   margin-top: 2rem;
   cursor: pointer;
 }
-.submitCard #submitCard__btn:hover {
+#orderInfo__adressForm button:hover {
   background-color: #202223;
   color: #fff200;
 }
