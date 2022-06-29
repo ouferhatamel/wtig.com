@@ -12,7 +12,8 @@
 <body>
     <!--NAVIGATION BAR-->
     <nav class="navBar">
-        <a href="index.html"><img src="images/others/Willim&Turnergrd-NavBar-logo.svg" alt="Willim&Turnergrd-NavBar-logo"></a>
+        <a href="index.html" class="navBar__homeBtn"></a>
+        <img src="images/others/Willim&Turnergrd-NavBar-logo.svg" alt="Willim&Turnergrd-NavBar-logo">
         <div class="navBar__links">
             <div class="navBar__detailsLinks">
                 <a href="services.html#tarifs">TARIFAS</a>
@@ -153,7 +154,7 @@
                         </div>
                         <div class="input__field">
                             <label for="complement">Complemento (opcional)</label>
-                            <input type="text" id="complement" name="complement" required>
+                            <input type="text" id="complement" name="complement">
                         </div>
                         <div class="form__line">
                             <div class="input__field">
@@ -178,7 +179,9 @@
                                 <input type="tel" id="tel" name="tel" required>
                             </div>
                         </div>
-                        <button>Validar</button>
+                        <button>Validar
+                            <img id="adressForm__loader" src="images/others/wytgrd-loader-gif.gif" alt="wtig-loader-gif">
+                        </button>
                     </form>
                 </div>
                 

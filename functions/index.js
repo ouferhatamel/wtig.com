@@ -48,9 +48,7 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
     mode: "payment",
     success_url: "http://localhost:5500/success-order.html",
     cancel_url: "http://localhost:5500/submit-card.html",
-    shipping_address_collection: {
-      allowed_countries: ["ES"],
-    },
+
     shipping_options: [
       {
         shipping_rate_data: {
@@ -63,9 +61,6 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
         },
       },
     ],
-    phone_number_collection: {
-      enabled: true,
-    },
     line_items: [
       // Cards price
       {
@@ -96,38 +91,6 @@ exports.createStripeCheckout = functions.https.onCall(async (data, context) => {
   };
 });
 
-// Stripe webhook - Storing order data on firestore
-
-/* exports.storeOrderData = functions.https.onRequest(async (req, res) => {
-  const stripe = require("stripe")(functions.config().stripe.secret_key);
-  let event;
-
-  try {
-    const whSec = functions.config().stripe.payments_webhook_secret;
-
-    event = stripe.webhooks.constructEvent(
-        req.rawBody,
-        req.headers["stripe-signature"],
-        whSec,
-    );
-  } catch (err) {
-    console.error("⚠️ Webhook signature verification failed.");
-    return res.sendStatus(400);
-  }
-
-  await admin.firestore().collection("orders").doc(orderReference()).set({
-    checkoutSessionId: dataObject.id,
-    paymentStatus: dataObject.payment_status,
-    shippingInfo: dataObject.shipping,
-    amountTotal: (dataObject.amount_total)/100,
-    quantity: orderData.quantity,
-    status: orderData.status,
-    cardList: orderData.cardList,
-  });
-
-  return res.sendStatus(200);
-}); */
-
 /**
  * Defines the unit price.
  * @param {int} quantity is the number of cards ordered.
@@ -145,13 +108,5 @@ function defineUnitPrice(quantity) {
     unitPrice = 10.15;
   }
 }
-
-/**
- * // Calculate order reference (id).
- * @return {int} a unique reference.
- */
-/* function orderReference() {
-  return new Date().getTime().toString();
-} */
 
 

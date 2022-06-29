@@ -45,6 +45,10 @@ searchInput.onkeyup = (e)=>{
 //Empty the search results 
 searchInput.onkeydown = clearList;
 
+//Load countries on the adress form
+const countrySelect = document.getElementById('county');
+document.addEventListener('DOMContentLoaded', getCountries);
+
 //Show howTo explanation
 const show_howTo = document.querySelector('.searchCard__howTo h3');
 show_howTo.addEventListener('click', ()=>{
@@ -73,10 +77,6 @@ yuGame.addEventListener('click', ()=>{
 });
 
 //Store order info on local storage
-const validate = document.getElementById('submitCard__btn');
-
-validate.addEventListener('click', checkout);
-
 const adressForm = document.getElementById('adressForm');
 adressForm.addEventListener('submit', checkout)
 
@@ -273,12 +273,12 @@ function addItem(e){
             </div>
             <div class="card__specifity_checkbox">
                 <div class="card__check">
-                    <input type="checkbox" id="card__edition" name="card__spec">
-                    <label for="card__edition">Ed.1</label>
+                    <input type="checkbox" name="card__spec">
+                    <label>Ed.1</label>
                 </div>
                 <div class="card__check">
-                    <input type="checkbox" id="card__shadow" name="card__spec">
-                    <label for="card__shadow">Shadowless</label>
+                    <input type="checkbox" name="card__spec">
+                    <label>Shadowless</label>
                 </div>
             </div>
             <div class="card_lang">
@@ -503,6 +503,28 @@ function getAdress(){
         "tel": adressForm['tel'].value
     }
 }
+// Get countries from api
+function getCountries(){
+    const countrySelect = document.getElementById('county');
+    console.log('countriess heeere')
+
+    fetch("https://restcountries.com/v3.1/all")
+    .then(res => {
+        return res.json();
+    }).then(data => {
+        let output = "";
+        data.forEach(country => {
+            console.log(country.name.common)
+        output += `
+        
+        <option value="${country.name.common}">${country.name.common}</option>`;
+        })
+
+        countrySelect.innerHTML = output;
+    }).catch(err => {
+        console.log(err);
+    })
+}
 // Get order info object
 function getOrderInfo(){
     const orderItems = cardContainer.querySelectorAll('.cardItem');
@@ -572,6 +594,9 @@ function getOrderInfo(){
 // Checkout function
 function checkout(e){
     e.preventDefault();
+
+    // Launch loader
+    displayLoader('adressForm__loader', 'flex');
     
     const orderData = getOrderInfo();
 
@@ -585,5 +610,13 @@ function checkout(e){
         .then(response => {
         const sessionId = response.data.id;
         stripe.redirectToCheckout({ sessionId: sessionId });
+
+        // Stop loader
+        displayLoader('adressForm__loader', 'none');
       });
+}
+// Display loader
+function displayLoader (id, display){
+    const loader = document.getElementById(id);
+    loader.style.display = display;
 }
