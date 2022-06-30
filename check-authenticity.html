@@ -11,7 +11,8 @@
     <body>
         <!--NAVIGATION BAR-->
         <nav class="navBar">
-            <a href="index.html"><img src="images/others/Willim&Turnergrd-NavBar-logo.svg" alt="Willim&Turnergrd-NavBar-logo"></a>
+            <a href="index.html" class="navBar__homeBtn"></a>
+            <img src="images/others/Willim&Turnergrd-NavBar-logo.svg" alt="Willim&Turnergrd-NavBar-logo">
             <div class="navBar__links">
                 <div class="navBar__detailsLinks">
                     <a href="services.html#tarifs">TARIFAS</a>
@@ -43,7 +44,7 @@
                     <ul>
                         <li>
                             <div>Código de verificación</div>
-                            <div id="certificate__code">7840</div>
+                            <div id="certificate__code">_</div>
                         </li>
                         <li>
                             <div>Nota</div>
@@ -59,23 +60,23 @@
                 <ul>
                     <li>
                         <span>Juego de cartas</span>
-                        <span>Pokemon</span>
+                        <span id="certificate__cGame">_</span>
                     </li>
                     <li>
                         <span>Nombre del espécimen</span>
-                        <span>Charizard</span>
+                        <span id="certificate__cName">_</span>
                     </li>
                     <li>
                         <span>Set</span>
-                        <span>Basic</span>
+                        <span id="certificate__cSet">_</span>
                     </li>
                     <li>
                         <span>Idioma del certificado</span>
-                        <span>Inglés</span>
+                        <span id="certificate__cCLang">_</span>
                     </li>
                     <li>
                         <span>Idioma de la tarjeta</span>
-                        <span>Japonés</span>
+                        <span id="certificate__cLang">_</span>
                     </li>
                 </ul>
             </div>
@@ -83,7 +84,7 @@
             <div class="certificate__footer">
                 <div>
                     <div class="title">Fecha</div>
-                    <div id="certificate__date">06/06/2022</div>
+                    <div id="certificate__date">_</div>
                 </div>
                 <div>
                     <div class="title">Presidente</div>
@@ -99,6 +100,7 @@
         
         <!-- SCRIPTS -->
         <script type="module" src="js/modules/updateNav-ui.js"></script>
+        <script type="module" src="js/card-certificate.js"></script>
         <!--FOOTER-->
         <footer class="mnFtr">
             <div class="mnFtr__container">

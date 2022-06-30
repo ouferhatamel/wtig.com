@@ -350,6 +350,8 @@ a {
 }
 #admin__dashboard #dashboard__certifiedCards .certifiedCards__list {
   list-style: none;
+  display: flex;
+  flex-direction: column-reverse;
 }
 #admin__dashboard #dashboard__certifiedCards .certifiedCards__list li {
   width: 70rem;
@@ -373,6 +375,7 @@ a {
 #admin__dashboard #dashboard__certifiedCards .certifiedCards__list .list__header {
   background-color: #202223;
   border-radius: 50px;
+  order: 1;
 }
 #admin__dashboard #dashboard__certifiedCards .certifiedCards__list .list__header span {
   color: white;

@@ -310,6 +310,8 @@
         }
         .certifiedCards__list{
             list-style: none;
+            display: flex;
+            flex-direction: column-reverse;
             li{
                 width: 70rem;
                 padding: 1.2rem 3rem;
@@ -332,6 +334,7 @@
             .list__header{
                 background-color: $dark_clr;
                 border-radius: 50px;
+                order: 1;
                 span{
                     color: white;
                 }
