@@ -217,6 +217,7 @@ async function cardExists(code){
             "corners": docSnap.data()['corners'],
             "edges": docSnap.data()['edges'],
             "surface": docSnap.data()['surface'],
+            "centering": docSnap.data()['centering'],
         }
 
         // Store in local storage

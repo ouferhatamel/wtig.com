@@ -499,7 +499,7 @@ main {
     width: 80%;
   }
   #about-us .about-us__prg p {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     line-height: 1.5;
   }
 
@@ -567,7 +567,7 @@ main {
     width: 80%;
   }
   .grading__params .grading__params__p p {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     line-height: 1.5;
   }
   .grading__params #grading__label {
@@ -598,7 +598,7 @@ main {
     flex: 1;
   }
   .grading__notations .grading__notation__txt p {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     line-height: 1.5;
   }
   .grading__notations .grading__notation__icn img {
