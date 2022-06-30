@@ -145,7 +145,7 @@ a {
   transform: rotate(-45deg) translate(35px, 35px);
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1160px) {
   .navBar {
     width: 100%;
     flex-direction: column;

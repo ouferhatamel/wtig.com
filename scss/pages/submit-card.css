@@ -145,7 +145,7 @@ a {
   transform: rotate(-45deg) translate(35px, 35px);
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1160px) {
   .navBar {
     width: 100%;
     flex-direction: column;
@@ -983,7 +983,7 @@ main {
   color: rgb(54, 54, 54);
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
   .mnFtr {
     width: 100%;
     padding: 1.5rem;
@@ -1006,6 +1006,41 @@ main {
   }
   .mnFtr .mnFtr__logo {
     justify-content: center;
+  }
+  .mnFtr .mnFtr__logo img {
+    width: 30%;
+  }
+  .mnFtr .mntFtr__copyright {
+    text-align: center;
+    line-height: 1.5;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .mnFtr {
+    width: 100%;
+    padding: 1.5rem;
+  }
+  .mnFtr .mnFtr__container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mnFtr .mnFtr__links {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .mnFtr .mnFtr__links h4 {
+    font-weight: 900;
+  }
+  .mnFtr .mnFtr__links ul {
+    margin-top: 1rem;
+  }
+  .mnFtr .mnFtr__logo {
+    justify-content: center;
+  }
+  .mnFtr .mnFtr__logo img {
+    width: 20%;
   }
   .mnFtr .mntFtr__copyright {
     text-align: center;
