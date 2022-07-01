@@ -17,16 +17,26 @@
 }
 //RESPONSIVE
 
+
+@media only screen and (max-width: $laptop_bp){
+    .grading__steps{
+        width: 100%;
+        justify-content: center;
+        .grading__step{
+            margin-bottom: 1rem;
+            img{
+                transform: scale(.8);
+            }
+        }
+    }
+}
 //Mobile screens
-@media only screen and (max-width: $mobile_bp){
+@media only screen and (max-width: $tablet_bp){
     .grading__steps{
         width: 100%;
         flex-direction: column;
         .grading__step{
             margin-bottom: 1rem;
-            img{
-                width: 11rem;
-            }
         }
     }
 }

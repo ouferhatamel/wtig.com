@@ -70,17 +70,18 @@
 
 //RESPONSIVE
 
-//Mobile screens
-@media only screen and (max-width: $mobile_bp){
+//Mobile / Tablet screens
+@media only screen and (max-width: $tablet_bp){
     #checkAuth{
+        font-size: .8rem;
         .checkAuth__checkBtn{
-            width: 80%;
-            height: 7rem;
+            width: 20rem;
+            height: 6rem;
             text-align: center;
             font-weight: 700;
         }
         .checkAuth__stars{
-            width: 95%;
+            width: 26rem;
             top: 60%;
             left: 50%;
             transform: translateX(-50%);

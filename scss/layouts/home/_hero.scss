@@ -1,7 +1,7 @@
 .hero{
     width: 100%;
     height: 100vh;
-    margin-top: 5rem;
+    margin-top: 3rem;
     position: relative;
     overflow: hidden;
 
@@ -111,19 +111,19 @@
 
 //RESPONSIVE
 
-//Mobile screens
-@media only screen and (max-width: $mobile_bp){
+//Mobile/tablet/laptop screens
+@media only screen and (max-width: $laptop_bp){
     .hero{
         margin-top: 2rem;
         .hero__certifyBtn{
-            width: 18rem;
-            height: 5rem;
+            width: 17rem;
+            height: 4rem;
             font-size: 1.3rem;
             padding: .8rem;
             top: 75%;
         }
         .hero__stars{
-            width: 95%;
+            width: 22rem;
             top: 70%;
         }
         .hero__slide{

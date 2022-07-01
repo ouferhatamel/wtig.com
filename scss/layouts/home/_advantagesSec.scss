@@ -96,8 +96,8 @@
 
 //RESPONSIVE
 
-//Mobile screens
-@media only screen and (max-width: $mobile_bp){
+//Mobile / Tablet / Laptop screens
+@media only screen and (max-width: $laptop_bp){
     .mainCnt__advSec{
         .cardTypes{
             width: 80%;

@@ -39,8 +39,36 @@
 }
 //RESPONSIVE
 
+@media only screen and (max-width: $laptop_bp){
+    .mainCnt__steps{
+        .mainCnt__steps__p{
+            width: 80%;
+            font-size: $m_size;
+            line-height: $m_lineHeigt;
+        }
+        .mainCnt__steps__p2{
+            width: 80%;
+            font-size: $m_size;
+            line-height: $m_lineHeigt;
+        }
+        .mainCnt__stepsIcns{
+            width: 80%;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            gap: 1rem;
+            .mainCnt__stepsIcn{
+                img{
+                    transform: scale(.8);
+                }
+            }
+        }
+    }
+    
+}
+
 //Mobile screens
-@media only screen and (max-width: $mobile_bp){
+@media only screen and (max-width: $tablet_bp){
     .mainCnt__steps{
         .mainCnt__steps__p{
             width: 80%;
@@ -58,9 +86,11 @@
         flex-direction: column;
         .mainCnt__stepsIcn{
             margin-bottom: 1rem;
-           /*  img{
-                width: 13rem !important;
-            } */
+           img{
+                transform: scale(1.5);
+            }
         }
     }
+    
 }
+

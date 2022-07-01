@@ -192,7 +192,7 @@ a {
 .hero {
   width: 100%;
   height: 100vh;
-  margin-top: 5rem;
+  margin-top: 3rem;
   position: relative;
   overflow: hidden;
 }
@@ -327,19 +327,19 @@ a {
   transform: translateX(-50%);
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1024px) {
   .hero {
     margin-top: 2rem;
   }
   .hero .hero__certifyBtn {
-    width: 18rem;
-    height: 5rem;
+    width: 17rem;
+    height: 4rem;
     font-size: 1.3rem;
     padding: 0.8rem;
     top: 75%;
   }
   .hero .hero__stars {
-    width: 95%;
+    width: 22rem;
     top: 70%;
   }
   .hero .hero__slide .heroDescription {
@@ -447,7 +447,7 @@ a {
   color: #fff200;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1024px) {
   .mainCnt__advSec .cardTypes {
     width: 80%;
     gap: 1rem;
@@ -568,15 +568,18 @@ a {
   transform: translate(-50%, -50%);
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
+  #checkAuth {
+    font-size: 0.8rem;
+  }
   #checkAuth .checkAuth__checkBtn {
-    width: 80%;
-    height: 7rem;
+    width: 20rem;
+    height: 6rem;
     text-align: center;
     font-weight: 700;
   }
   #checkAuth .checkAuth__stars {
-    width: 95%;
+    width: 26rem;
     top: 60%;
     left: 50%;
     transform: translateX(-50%);
@@ -621,7 +624,29 @@ a {
   width: 11rem;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1024px) {
+  .mainCnt__steps .mainCnt__steps__p {
+    width: 80%;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .mainCnt__steps .mainCnt__steps__p2 {
+    width: 80%;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .mainCnt__steps .mainCnt__stepsIcns {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .mainCnt__steps .mainCnt__stepsIcns .mainCnt__stepsIcn img {
+    transform: scale(0.8);
+  }
+}
+@media only screen and (max-width: 768px) {
   .mainCnt__steps .mainCnt__steps__p {
     width: 80%;
     font-size: 0.9rem;
@@ -639,9 +664,9 @@ a {
   }
   .mainCnt__stepsIcns .mainCnt__stepsIcn {
     margin-bottom: 1rem;
-    /*  img{
-         width: 13rem !important;
-     } */
+  }
+  .mainCnt__stepsIcns .mainCnt__stepsIcn img {
+    transform: scale(1.5);
   }
 }
 .grading__steps {
@@ -662,16 +687,25 @@ a {
   width: 11rem;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1024px) {
+  .grading__steps {
+    width: 100%;
+    justify-content: center;
+  }
+  .grading__steps .grading__step {
+    margin-bottom: 1rem;
+  }
+  .grading__steps .grading__step img {
+    transform: scale(0.8);
+  }
+}
+@media only screen and (max-width: 768px) {
   .grading__steps {
     width: 100%;
     flex-direction: column;
   }
   .grading__steps .grading__step {
     margin-bottom: 1rem;
-  }
-  .grading__steps .grading__step img {
-    width: 11rem;
   }
 }
 .mainCnt {
@@ -780,7 +814,35 @@ a {
   color: #fff200;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1024px) {
+  .mainCnt .sub__progress {
+    width: 50%;
+  }
+  .mainCnt .sub__progress .sub__progress__bar {
+    width: 100%;
+  }
+  .mainCnt .sub__progress .sub__progress__number {
+    font-size: 2rem;
+  }
+  .mainCnt .sub__progress p {
+    width: 80%;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .mainCnt .maintCnt__instaFeed {
+    width: 100%;
+    gap: 2rem;
+  }
+  .mainCnt .maintCnt__instaFeed .instaFeed__post {
+    width: 9rem;
+    height: 9rem;
+  }
+  .mainCnt .icn__btn {
+    width: 7rem;
+    height: 2.5rem;
+  }
+}
+@media only screen and (max-width: 768px) {
   .mainCnt .sub__progress {
     width: 80%;
   }
