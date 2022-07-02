@@ -199,7 +199,7 @@ checkBtn.addEventListener('click', (e) => {
 // Check if card exists
 async function cardExists(code){
     
-    const docRef = doc(db, "certified cards", code);
+    const docRef = doc(db, "certified_cards", code);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {

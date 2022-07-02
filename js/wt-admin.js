@@ -473,7 +473,7 @@ async function addCertifiedCard(){
     //Get input values from the form
     const values = getInputValues();
     
-    await setDoc(doc(db, "certified cards", values.code),{
+    await setDoc(doc(db, "certified_cards", values.code),{
         "user id": values.email,
         "certification date": values.cDate,
         "order reference": values.orderRef,
@@ -504,7 +504,7 @@ async function snapshotCertifiedCards(){
         <span>Editar</span>
     </li>
     `;
-    const docs = await getDocs(collection(db, "certified cards"));
+    const docs = await getDocs(collection(db, "certified_cards"));
 
     docs.forEach((doc) => {
         //Display admin users collection data     
