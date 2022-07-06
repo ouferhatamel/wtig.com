@@ -447,7 +447,7 @@ a {
   color: #fff200;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1200px) {
   .mainCnt__advSec .cardTypes {
     width: 80%;
     gap: 1rem;
@@ -573,13 +573,13 @@ a {
     font-size: 0.8rem;
   }
   #checkAuth .checkAuth__checkBtn {
-    width: 20rem;
+    width: 18rem;
     height: 6rem;
     text-align: center;
     font-weight: 700;
   }
   #checkAuth .checkAuth__stars {
-    width: 26rem;
+    width: 21rem;
     top: 60%;
     left: 50%;
     transform: translateX(-50%);
@@ -945,38 +945,6 @@ a {
   color: rgb(54, 54, 54);
 }
 
-@media only screen and (max-width: 768px) {
-  .mnFtr {
-    width: 100%;
-    padding: 1.5rem;
-  }
-  .mnFtr .mnFtr__container {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .mnFtr .mnFtr__links {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  .mnFtr .mnFtr__links h4 {
-    font-weight: 900;
-  }
-  .mnFtr .mnFtr__links ul {
-    margin-top: 1rem;
-  }
-  .mnFtr .mnFtr__logo {
-    justify-content: center;
-  }
-  .mnFtr .mnFtr__logo img {
-    width: 30%;
-  }
-  .mnFtr .mntFtr__copyright {
-    text-align: center;
-    line-height: 1.5;
-  }
-}
 @media only screen and (max-width: 1024px) {
   .mnFtr {
     width: 100%;
@@ -1002,7 +970,39 @@ a {
     justify-content: center;
   }
   .mnFtr .mnFtr__logo img {
-    width: 20%;
+    width: 25%;
+  }
+  .mnFtr .mntFtr__copyright {
+    text-align: center;
+    line-height: 1.5;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .mnFtr {
+    width: 100%;
+    padding: 1.5rem;
+  }
+  .mnFtr .mnFtr__container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mnFtr .mnFtr__links {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .mnFtr .mnFtr__links h4 {
+    font-weight: 900;
+  }
+  .mnFtr .mnFtr__links ul {
+    margin-top: 1rem;
+  }
+  .mnFtr .mnFtr__logo {
+    justify-content: center;
+  }
+  .mnFtr .mnFtr__logo img {
+    width: 45%;
   }
   .mnFtr .mntFtr__copyright {
     text-align: center;

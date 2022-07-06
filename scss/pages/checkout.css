@@ -470,38 +470,6 @@ main {
   color: rgb(54, 54, 54);
 }
 
-@media only screen and (max-width: 768px) {
-  .mnFtr {
-    width: 100%;
-    padding: 1.5rem;
-  }
-  .mnFtr .mnFtr__container {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .mnFtr .mnFtr__links {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  .mnFtr .mnFtr__links h4 {
-    font-weight: 900;
-  }
-  .mnFtr .mnFtr__links ul {
-    margin-top: 1rem;
-  }
-  .mnFtr .mnFtr__logo {
-    justify-content: center;
-  }
-  .mnFtr .mnFtr__logo img {
-    width: 30%;
-  }
-  .mnFtr .mntFtr__copyright {
-    text-align: center;
-    line-height: 1.5;
-  }
-}
 @media only screen and (max-width: 1024px) {
   .mnFtr {
     width: 100%;
@@ -527,7 +495,39 @@ main {
     justify-content: center;
   }
   .mnFtr .mnFtr__logo img {
-    width: 20%;
+    width: 25%;
+  }
+  .mnFtr .mntFtr__copyright {
+    text-align: center;
+    line-height: 1.5;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .mnFtr {
+    width: 100%;
+    padding: 1.5rem;
+  }
+  .mnFtr .mnFtr__container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mnFtr .mnFtr__links {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .mnFtr .mnFtr__links h4 {
+    font-weight: 900;
+  }
+  .mnFtr .mnFtr__links ul {
+    margin-top: 1rem;
+  }
+  .mnFtr .mnFtr__logo {
+    justify-content: center;
+  }
+  .mnFtr .mnFtr__logo img {
+    width: 45%;
   }
   .mnFtr .mntFtr__copyright {
     text-align: center;

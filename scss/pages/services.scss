@@ -19,9 +19,9 @@ header{
     overflow: hidden;
     h1{
         position: absolute;
-        top: 40%;
-        left: 30%;
-        transform: translate(30%, 30%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         font-size: 5rem;
         color: $main_clr;
         //font-weight: 700
@@ -29,9 +29,9 @@ header{
     img{
         width: 35rem;
         position: absolute;
-        top: 25%;
-        left: 23%;
-        transform: translate(30%, 30%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 @import '../layouts/services/main';
@@ -40,22 +40,17 @@ header{
 //RESPONSIVE
 
 //Mobile screens
-@media only screen and (max-width: $mobile_bp){
+@media only screen and (max-width: $desktop_bp){
     header{
         height: 40vh;
         background-position: left;
         margin-top: 3rem;
         h1{
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 3.5rem;
+            font-size: 3.2rem;
         }
         img{
-            width: 22rem;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            width: 21rem;
+
         }
     }
 }

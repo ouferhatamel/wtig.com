@@ -207,18 +207,18 @@ header {
 }
 header h1 {
   position: absolute;
-  top: 40%;
-  left: 30%;
-  transform: translate(30%, 30%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 5rem;
   color: #fff200;
 }
 header img {
   width: 35rem;
   position: absolute;
-  top: 25%;
-  left: 23%;
-  transform: translate(30%, 30%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 main {
@@ -304,10 +304,11 @@ main {
 .tarifs__offers .tarifs__offer__quant h2 {
   font-size: 2.5rem;
   font-weight: 900;
+  margin-left: 1.5rem;
 }
 .tarifs__offers .tarifs__offer__quant span {
-  font-size: 0.8rem;
-  padding-bottom: 4.5px;
+  font-size: 0.7rem;
+  margin-bottom: 0.42rem;
 }
 .tarifs__offers .tarifs__offer__price {
   display: flex;
@@ -319,10 +320,11 @@ main {
 .tarifs__offers .tarifs__offer__price h2 {
   font-size: 2.5rem;
   font-weight: 900;
+  margin-left: 1.7rem;
 }
 .tarifs__offers .tarifs__offer__price span {
-  font-size: 0.6rem;
-  padding-bottom: 4.5px;
+  font-size: 0.7rem;
+  margin-bottom: 0.42rem;
 }
 .tarifs__offers p {
   font-size: 0.8rem;
@@ -338,18 +340,6 @@ main {
 .tarifs__offers .tarifs__offer__btn:hover {
   background-color: #202223;
   color: #fff200;
-}
-.tarifs__offers .or_more {
-  position: absolute;
-  left: 18.1rem;
-  top: 10.15rem;
-  font-size: 0.7rem;
-}
-.tarifs__offers .tva {
-  position: absolute;
-  left: 15.2rem;
-  top: 13.15rem;
-  font-size: 0.7rem;
 }
 
 #grading {
@@ -453,7 +443,7 @@ main {
   text-align: center;
 }
 .grading__scale #grading__scale__img {
-  width: 75rem;
+  width: 60rem;
   margin: 3rem 0;
 }
 
@@ -494,7 +484,117 @@ main {
   float: right;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1380px) {
+  .tarifs__offers {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  #grading #grading__steps {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #grading .grading__step {
+    min-width: 20rem;
+    max-width: 20rem;
+    padding: 2rem;
+  }
+  #grading .grading__step img {
+    width: 8rem;
+  }
+
+  .grading__scale {
+    padding-bottom: 2rem;
+  }
+  .grading__scale .grading__scale__h1 h1 {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .labels img {
+    height: 5.5rem;
+  }
+
+  #about-us .about-us__prg {
+    width: 80%;
+  }
+  #about-us .about-us__prg p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .tarifs__offers {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  #grading #grading__steps {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #grading .grading__step {
+    min-width: 20rem;
+    max-width: 20rem;
+    padding: 2rem;
+  }
+  #grading .grading__step img {
+    width: 8rem;
+  }
+  #grading .grading__step__par p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .grading__params .grading__params__h1 {
+    width: 100%;
+  }
+  .grading__params .grading__params__h1 h1 {
+    font-size: 20px;
+  }
+  .grading__params .grading__params__p {
+    width: 80%;
+  }
+  .grading__params .grading__params__p p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .grading__params #grading__label {
+    width: 80%;
+  }
+
+  .grading__scale {
+    padding-bottom: 2rem;
+  }
+  .grading__scale .grading__scale__h1 h1 {
+    font-size: 20px;
+  }
+  .grading__scale #grading__scale__img {
+    width: 90%;
+    margin-bottom: 0;
+  }
+
+  .grading__notations {
+    width: 80%;
+    gap: 3rem;
+  }
+  .grading__notations .grading__notation {
+    width: 100%;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+  .grading__notations .grading__notation__txt {
+    flex: 1;
+  }
+  .grading__notations .grading__notation__txt p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .labels img {
+    height: 5.5rem;
+  }
+
   #about-us .about-us__prg {
     width: 80%;
   }
@@ -521,19 +621,11 @@ main {
     font-size: 0.6rem;
   }
   .tarifs__offers .tarifs__offer {
-    width: 80%;
+    width: 20rem;
     padding: 2rem 1rem;
   }
   .tarifs__offers .tarifs__offer h2 {
     font-size: 1.5;
-  }
-  .tarifs__offers .or_more {
-    left: 15.8rem;
-    top: 7.8rem;
-  }
-  .tarifs__offers .tva {
-    left: 13.5rem;
-    top: 10rem;
   }
 
   #grading {
@@ -547,10 +639,14 @@ main {
     align-items: center;
   }
   #grading .grading__step {
-    width: 80%;
+    width: 20rem;
     padding: 2rem;
   }
+  #grading .grading__step img {
+    width: 8rem;
+  }
   #grading .grading__step__par p {
+    font-size: 0.9rem;
     line-height: 1.5;
   }
 
@@ -600,9 +696,6 @@ main {
   .grading__notations .grading__notation__txt p {
     font-size: 0.9rem;
     line-height: 1.5;
-  }
-  .grading__notations .grading__notation__icn img {
-    width: 12rem;
   }
 }
 .mnFtr {
@@ -678,38 +771,6 @@ main {
   color: rgb(54, 54, 54);
 }
 
-@media only screen and (max-width: 768px) {
-  .mnFtr {
-    width: 100%;
-    padding: 1.5rem;
-  }
-  .mnFtr .mnFtr__container {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .mnFtr .mnFtr__links {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  .mnFtr .mnFtr__links h4 {
-    font-weight: 900;
-  }
-  .mnFtr .mnFtr__links ul {
-    margin-top: 1rem;
-  }
-  .mnFtr .mnFtr__logo {
-    justify-content: center;
-  }
-  .mnFtr .mnFtr__logo img {
-    width: 30%;
-  }
-  .mnFtr .mntFtr__copyright {
-    text-align: center;
-    line-height: 1.5;
-  }
-}
 @media only screen and (max-width: 1024px) {
   .mnFtr {
     width: 100%;
@@ -735,7 +796,7 @@ main {
     justify-content: center;
   }
   .mnFtr .mnFtr__logo img {
-    width: 20%;
+    width: 25%;
   }
   .mnFtr .mntFtr__copyright {
     text-align: center;
@@ -743,21 +804,47 @@ main {
   }
 }
 @media only screen and (max-width: 480px) {
+  .mnFtr {
+    width: 100%;
+    padding: 1.5rem;
+  }
+  .mnFtr .mnFtr__container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mnFtr .mnFtr__links {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .mnFtr .mnFtr__links h4 {
+    font-weight: 900;
+  }
+  .mnFtr .mnFtr__links ul {
+    margin-top: 1rem;
+  }
+  .mnFtr .mnFtr__logo {
+    justify-content: center;
+  }
+  .mnFtr .mnFtr__logo img {
+    width: 45%;
+  }
+  .mnFtr .mntFtr__copyright {
+    text-align: center;
+    line-height: 1.5;
+  }
+}
+@media only screen and (max-width: 1200px) {
   header {
     height: 40vh;
     background-position: left;
     margin-top: 3rem;
   }
   header h1 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3.5rem;
+    font-size: 3.2rem;
   }
   header img {
-    width: 22rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 21rem;
   }
 }/*# sourceMappingURL=services.css.map */

@@ -82,10 +82,11 @@ main{
         h2{
             font-size: 2.5rem;
             font-weight: 900;
+            margin-left: 1.5rem;
         }
         span{
-            font-size: .8rem;
-            padding-bottom: 4.5px;
+            font-size: .7rem;
+            margin-bottom: .42rem;
         }
     }
     .tarifs__offer__price{
@@ -97,10 +98,11 @@ main{
         h2{
             font-size: 2.5rem;
             font-weight: 900;
+            margin-left: 1.7rem;
         }
         span{
-            font-size: .6rem;
-            padding-bottom: 4.5px;
+            font-size: .7rem;
+            margin-bottom: .42rem;
         }
     }
     p{
@@ -117,18 +119,6 @@ main{
             background-color: $dark_clr;
             color: $main_clr;
         }
-    }
-    .or_more{
-        position: absolute;
-        left: 18.1rem;
-        top: 10.15rem;
-        font-size: .7rem;
-    }
-    .tva{
-        position: absolute;
-        left: 15.2rem;
-        top: 13.15rem;
-        font-size: .7rem;
     }
 }
 //GRADING
@@ -236,7 +226,7 @@ main{
         }
     }
     #grading__scale__img{
-        width: 75rem;
+        width: 60rem;
         margin: 3rem 0;
     }
 }
@@ -279,10 +269,144 @@ main{
     }
 }
     
-//RESPONSIVE
+// RESPONSIVE
 
-//Mobile screens
-@media only screen and (max-width: $mobile_bp){
+// 1380px screens
+@media only screen and (max-width: 1380px){
+    //OFFERS
+    .tarifs__offers{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    //GRADING
+    #grading{
+        #grading__steps{
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .grading__step{
+            min-width: 20rem;
+            max-width: 20rem;
+            padding: 2rem;
+            img{
+                width: 8rem;
+            }
+        }
+    }
+    //GRADING SCALE
+    .grading__scale{
+        padding-bottom: 2rem;
+        .grading__scale__h1{ 
+            h1{
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+// Desktop screens
+@media only screen and (max-width: $desktop_bp){
+    //STYLING LABELS
+    .labels{
+        img{
+            height: 5.5rem;
+        }
+    }
+    //ABOUT US
+    #about-us{
+        .about-us__prg{
+            width: 80%;
+            p{
+                font-size: $m_size;
+                line-height: $m_lineHeigt;
+            }
+        }
+    }
+    //OFFERS
+    .tarifs__offers{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    //GRADING
+    #grading{
+        #grading__steps{
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .grading__step{
+            min-width: 20rem;
+            max-width: 20rem;
+            padding: 2rem;
+            img{
+                width: 8rem;
+            }
+        }
+        .grading__step__par{
+            p{
+                font-size: $m_size;
+                line-height: $m_lineHeigt;
+            }
+        }
+    }
+    //GRADING PARAMETERS
+    .grading__params{
+        .grading__params__h1{
+            width: 100%;
+            h1{
+                font-size: 20px;
+            }
+        }
+        .grading__params__p{
+            width: 80%;
+            p{
+                font-size: $m_size;
+                line-height: $m_lineHeigt;
+            }
+        }
+        #grading__label{
+            width: 80%;
+        }
+    }
+    //GRADING SCALE
+    .grading__scale{
+        padding-bottom: 2rem;
+        .grading__scale__h1{ 
+            h1{
+                font-size: 20px;
+            }
+        }
+        #grading__scale__img{
+            width: 90%;
+            margin-bottom: 0;
+        }
+    }
+    //GRADING NOTATION
+    .grading__notations{
+        width: 80%;
+        gap: 3rem;
+        
+        .grading__notation{
+            width: 100%;
+            flex-direction: column-reverse;
+            gap: 1rem;
+        }
+        .grading__notation__txt{
+            flex: 1;
+            p{
+                font-size: $m_size;
+                line-height: $m_lineHeigt;
+            }
+        }
+    }
+}
+// Mobile/Tablet screens
+@media only screen and (max-width: $tablet_bp){
+    //STYLING LABELS
+    .labels{
+        img{
+            height: 5.5rem;
+        }
+    }
     //ABOUT US
     #about-us{
         .about-us__prg{
@@ -313,22 +437,13 @@ main{
             span{
                 font-size: .6rem;
             }
-        }
-    
+        }  
         .tarifs__offer{
-            width: 80%;
+            width: 20rem;
             padding: 2rem 1rem;
             h2{
                 font-size: 1.5;
             }
-        }
-        .or_more{
-            left: 15.8rem;
-            top: 7.8rem;
-        }
-        .tva{
-            left: 13.5rem;
-            top: 10rem;
         }
     }
     //GRADING
@@ -342,11 +457,15 @@ main{
             align-items: center;
         }
         .grading__step{
-            width: 80%;
+            width: 20rem;
             padding: 2rem;
+            img{
+                width: 8rem;
+            }
         }
         .grading__step__par{
             p{
+                font-size: $m_size;
                 line-height: $m_lineHeigt;
             }
         }
@@ -401,11 +520,6 @@ main{
             p{
                 font-size: $m_size;
                 line-height: $m_lineHeigt;
-            }
-        }
-        .grading__notation__icn{
-            img{
-                width: 12rem;
             }
         }
     }
