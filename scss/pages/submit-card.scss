@@ -41,7 +41,21 @@ main{
 //RESPONSIVE
 
 //Mobile screens
-@media only screen and (max-width: $mobile_bp){
+@media only screen and (max-width: $laptop_bp){
+    .steps{
+        width: 70%;
+        height: 20vh;
+        margin-bottom: 2rem;
+        gap: 4rem;
+        .steps__icn{
+            img{
+                width: 8rem;
+            }
+        }
+    }
+}
+//Mobile screens
+@media only screen and (max-width: $tablet_bp){
     //STEPS
     .steps{
         height: auto;

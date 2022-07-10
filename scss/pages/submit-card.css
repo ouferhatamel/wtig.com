@@ -835,68 +835,59 @@ main {
   color: #fff200;
 }
 
-@media only screen and (max-width: 480px) {
-  .searchCard {
-    padding: 0rem;
+@media only screen and (max-width: 1300px) {
+  .searchCard .searchCard__suggestions {
+    width: 40%;
+    padding: 2rem 0rem;
   }
-  .searchCard .searchCard__ht {
-    width: 90%;
-    padding: 1rem 2rem;
+}
+@media only screen and (max-width: 1024px) {
+  .searchCard .searchCard__c-game {
+    transform: scale(0.7);
   }
+  .searchCard .searchCard__suggestions {
+    width: 40%;
+  }
+
+  .cards ul {
+    width: 180%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .searchCard .searchCard__c-game {
+    transform: scale(0.7);
+  }
+  .searchCard .searchCard__suggestions {
+    width: 40%;
+  }
+
+  .cards ul {
+    width: 180%;
+  }
+}
+@media only screen and (max-width: 900px) {
   .searchCard .searchCard__ht h2 {
-    font-size: 1.3rem;
-  }
-  .searchCard .howTo {
-    width: 80%;
-    display: none;
+    font-size: 1.2rem;
   }
   .searchCard .howTo p {
     font-size: 0.9rem;
-    padding: 1rem;
-    margin-bottom: 0.8rem;
-    border-radius: 50px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  }
-  .searchCard .howTo span {
-    font-weight: 300;
-    font-style: italic;
-  }
-  .searchCard .howTo--shown {
-    display: block;
-  }
-  .searchCard .searchCard__c-game {
-    gap: 1.5rem;
-    transform: scale(0.5);
   }
   .searchCard .searchCard__howTo {
     width: 100%;
   }
-  .searchCard .searchCard__select {
-    width: 100%;
-    gap: 1.5rem;
-  }
-  .searchCard .searchCard__input {
-    width: 70%;
-    display: flex;
-  }
-  .searchCard .searchCard__suggestions {
-    width: 80%;
-    padding: 2rem 0rem;
-  }
-  .searchCard .suggestions__list li {
-    gap: 2rem;
-    padding: 1rem 0;
-  }
-
-  .cards {
-    padding: 1rem 2rem 2rem;
-  }
-  .cards ul {
-    width: 350%;
+  .searchCard .searchCard__howTo h3 {
     font-size: 0.9rem;
   }
-  .cards ul li {
-    padding: 1rem;
+  .searchCard .searchCard__input input {
+    font-size: 0.8rem;
+  }
+  .searchCard .suggestions__list li {
+    font-size: 0.85rem;
+  }
+
+  .cards ul {
+    width: 280%;
+    font-size: 0.9rem;
   }
 
   .orderDtls {
@@ -906,8 +897,52 @@ main {
     align-items: center;
   }
 
+  .recap h3 {
+    font-size: 1.4rem;
+  }
+  .recap .details {
+    font-size: 0.9rem;
+  }
+
+  .submitCard {
+    align-items: center;
+  }
+  .submitCard .submitCard__insurance {
+    font-size: 0.9rem;
+  }
+
   #orderInfo__adressForm {
     width: 20rem;
+  }
+  #orderInfo__adressForm h3 {
+    font-size: 1.2rem;
+  }
+  #orderInfo__adressForm form label {
+    font-size: 0.9rem;
+  }
+  #orderInfo__adressForm form select {
+    font-size: 0.9rem;
+  }
+  #orderInfo__adressForm form button {
+    width: 7rem;
+    height: 2.5rem;
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .searchCard .searchCard__c-game {
+    gap: 1.5rem;
+    transform: scale(0.5);
+  }
+  .searchCard .searchCard__input {
+    width: 70%;
+  }
+  .searchCard .searchCard__suggestions {
+    width: 80%;
+  }
+
+  .cards ul {
+    width: 380%;
   }
 }
 .mnFtr {
@@ -1047,7 +1082,18 @@ main {
     line-height: 1.5;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1024px) {
+  .steps {
+    width: 70%;
+    height: 20vh;
+    margin-bottom: 2rem;
+    gap: 4rem;
+  }
+  .steps .steps__icn img {
+    width: 8rem;
+  }
+}
+@media only screen and (max-width: 768px) {
   .steps {
     height: auto;
     flex-direction: column;

@@ -628,69 +628,81 @@
 
 //RESPONSIVE
 
-//Mobile screens
-@media only screen and (max-width: $mobile_bp){
+//  1300 px and screens
+@media only screen and (max-width: 1300px){
     .searchCard{
-        padding: 0rem;
+        .searchCard__suggestions{
+            width: 40%;
+            padding: 2rem 0rem;
+        }
+    }
+}
+// Laptop and screens
+@media only screen and (max-width: $laptop_bp){
+    .searchCard{
+        .searchCard__c-game{
+            transform: scale(.7);
+        }
+        .searchCard__suggestions{
+            width: 40%;
+        }
+    }
+    .cards{
+        ul{
+            width: 180%;
+        }
+    }
+}
+// Laptop and screens
+@media only screen and (max-width: $laptop_bp){
+    .searchCard{
+        .searchCard__c-game{
+            transform: scale(.7);
+        }
+        .searchCard__suggestions{
+            width: 40%;
+        }
+    }
+    .cards{
+        ul{
+            width: 180%;
+        }
+    }
+}
+// Tablet screens
+@media only screen and (max-width: 900px){
+    .searchCard{
         .searchCard__ht{
-            width: 90%;
-            padding: 1rem 2rem;
             h2{
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
         }
         .howTo{
-            width: 80%;
-            display: none;
             p{
                 font-size: .9rem;
-                padding: 1rem;
-                margin-bottom: .8rem;
-                border-radius: 50px;
-                box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
             }
-            span{
-                font-weight: 300;
-                font-style: italic;
-            }
-            &--shown{
-                display: block;
-            }
-        }
-        .searchCard__c-game{
-            gap: 1.5rem;
-            transform: scale(.5);
         }
         .searchCard__howTo{
             width:100%;
-        }
-        .searchCard__select{
-            width: 100%;
-            gap: 1.5rem;
+            h3{  
+                font-size: $m_size;
+            }
         }
         .searchCard__input{
-            width: 70%;
-            display: flex;
-        }
-        .searchCard__suggestions{
-            width: 80%;
-            padding: 2rem 0rem;
+            input{
+                font-size: .8rem;
+            }
         }
         .suggestions__list{
             li{
-                gap: 2rem;
-                padding: 1rem 0;
+                font-size: .85rem;
             }
         }
     }
     .cards{
-        padding: 1rem 2rem 2rem;
         ul{
-            width: 350%;
+            width: 280%;
             font-size: .9rem;
-            li{
-                padding: 1rem;
-            }
         }
     }
     .orderDtls{
@@ -699,7 +711,57 @@
         flex-direction: column;
         align-items: center;
     }
+    .recap{
+        h3{
+            font-size: 1.4rem;
+        }
+        .details{
+            font-size: $m_size;
+        }
+    }
+    .submitCard{
+        align-items: center;
+        .submitCard__insurance{
+            font-size: $m_size;
+        }
+    }
     #orderInfo__adressForm{
         width: 20rem;
+        h3{
+            font-size: 1.2rem;
+        }
+        form{
+            label{
+                font-size: $m_size;
+            }
+            select{
+                font-size: $m_size;
+            }
+            button{
+                width: 7rem;
+                height: 2.5rem;
+                font-size: $m_size;
+            }
+        }
+    }
+}
+// Mobile / screens
+@media only screen and (max-width: $mobile_bp){
+    .searchCard{
+        .searchCard__c-game{
+            gap: 1.5rem;
+            transform: scale(.5);
+        }
+        .searchCard__input{
+            width: 70%;
+        }
+        .searchCard__suggestions{
+            width: 80%;
+        }
+    }
+    .cards{
+        ul{
+            width: 380%;
+        }
     }
 }

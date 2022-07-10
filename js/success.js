@@ -3,7 +3,6 @@ import{auth, onAuthStateChanged, doc, setDoc,db, Timestamp}from "./modules/fireb
 
 // Get order information from local storage
 const orderInfo= getOrderInfo();
-
 // Get current user info
 getCurrentUser()
 .then(user =>{
@@ -53,7 +52,6 @@ function getOrderInfo(){
 
     const orderInfoString = localStorage.getItem('orderInfo');
     const orderInfo = JSON.parse(orderInfoString);
-    console.log(orderInfo);
 
     return orderInfo;
 }

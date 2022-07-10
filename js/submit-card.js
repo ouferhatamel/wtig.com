@@ -273,11 +273,11 @@ function addItem(e){
             </div>
             <div class="card__specifity_checkbox">
                 <div class="card__check">
-                    <input type="checkbox" name="card__spec">
+                    <input type="checkbox" name="card__spec" id="card__edition">
                     <label>Ed.1</label>
                 </div>
                 <div class="card__check">
-                    <input type="checkbox" name="card__spec">
+                    <input type="checkbox" name="card__spec" id="card__shadow">
                     <label>Shadowless</label>
                 </div>
             </div>
