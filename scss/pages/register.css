@@ -241,25 +241,21 @@ body {
     gap: 3rem;
     overflow: hidden;
   }
-
   .forms__wtigLogo {
     flex: none;
   }
   .forms__wtigLogo img {
     width: 10rem;
   }
-
   .forms__container {
     flex: none;
     display: flex;
     width: 100%;
   }
-
   .form__box {
     padding: 3rem 1.5rem;
     width: 80%;
   }
-
   .forms_style {
     gap: 1rem;
     font-size: 0.9rem;

@@ -184,7 +184,6 @@ a {
     justify-content: center;
     gap: 2rem;
   }
-
   .burger {
     visibility: visible;
   }
@@ -657,7 +656,6 @@ a {
     font-size: 0.9rem;
     line-height: 1.5;
   }
-
   .mainCnt__stepsIcns {
     width: 100%;
     flex-direction: column;
