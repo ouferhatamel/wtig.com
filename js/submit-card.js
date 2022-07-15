@@ -230,11 +230,17 @@ function printData(data, inputD, g_flag){
             }
             
             suggList.appendChild(item);
+
+            console.log(suggList)
             //ADDING TO THE ORDER LIST
             const addItemBtn = item.querySelector('.cardInfo__addBasket');
             addItemBtn.addEventListener('click',addItem);
         }
     });
+
+    suggList.innerHTML += `
+        <a href="#searchBar" id="search_again">buscar de nuevo</a>
+    `;
 
     if(!containFlag){
         inputMsg.textContent = 'No existe tal carta. Asegúrese de que el nombre está escrito correctamente.';
@@ -506,7 +512,6 @@ function getAdress(){
 // Get countries from api
 function getCountries(){
     const countrySelect = document.getElementById('county');
-    console.log('countriess heeere')
 
     fetch("https://restcountries.com/v3.1/all")
     .then(res => {
@@ -514,7 +519,6 @@ function getCountries(){
     }).then(data => {
         let output = "";
         data.forEach(country => {
-            console.log(country.name.common)
         output += `
         
         <option value="${country.name.common}">${country.name.common}</option>`;
