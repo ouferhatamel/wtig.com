@@ -754,6 +754,10 @@ main {
   font-size: 1.8rem;
   margin-bottom: 1.2rem;
 }
+.recap .details:last-child {
+  display: flex;
+  justify-content: space-between;
+}
 .recap .details:not(div:last-child) {
   margin-bottom: 1rem;
 }

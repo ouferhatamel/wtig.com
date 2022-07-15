@@ -541,30 +541,18 @@ a {
 }
 
 ::-moz-placeholder {
+  text-align: center;
   color: #202223;
-  opacity: 0.8;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 
 :-ms-input-placeholder {
+  text-align: center;
   color: #202223;
-  opacity: 0.8;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 
 ::placeholder {
+  text-align: center;
   color: #202223;
-  opacity: 0.8;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 
 @media only screen and (max-width: 768px) {
@@ -608,10 +596,16 @@ a {
 .mainCnt__steps .mainCnt__stepsIcns {
   width: 65%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 7rem;
   margin-top: 2rem;
+}
+.mainCnt__steps .mainCnt__stepsIcns .mainCnt__block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7rem;
 }
 .mainCnt__steps .mainCnt__stepsIcns .mainCnt__stepsIcn {
   display: flex;
@@ -624,22 +618,12 @@ a {
 }
 
 @media only screen and (max-width: 1024px) {
-  .mainCnt__steps .mainCnt__steps__p {
-    width: 80%;
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-  .mainCnt__steps .mainCnt__steps__p2 {
-    width: 80%;
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
   .mainCnt__steps .mainCnt__stepsIcns {
     width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
+  }
+  .mainCnt__steps .mainCnt__stepsIcns .mainCnt__block {
+    gap: 1.5rem;
   }
   .mainCnt__steps .mainCnt__stepsIcns .mainCnt__stepsIcn img {
     transform: scale(0.8);
@@ -663,17 +647,20 @@ a {
   .mainCnt__stepsIcns .mainCnt__stepsIcn {
     margin-bottom: 1rem;
   }
-  .mainCnt__stepsIcns .mainCnt__stepsIcn img {
-    transform: scale(1.5);
-  }
 }
 .grading__steps {
   width: 65%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 7rem;
   padding-top: 2rem;
+}
+.grading__steps .grading__block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7rem;
 }
 .grading__steps .grading__step {
   display: flex;
@@ -689,6 +676,10 @@ a {
   .grading__steps {
     width: 100%;
     justify-content: center;
+    gap: 1.5rem;
+  }
+  .grading__steps .grading__block {
+    gap: 1.5rem;
   }
   .grading__steps .grading__step {
     margin-bottom: 1rem;
@@ -699,11 +690,7 @@ a {
 }
 @media only screen and (max-width: 768px) {
   .grading__steps {
-    width: 100%;
     flex-direction: column;
-  }
-  .grading__steps .grading__step {
-    margin-bottom: 1rem;
   }
 }
 .mainCnt {

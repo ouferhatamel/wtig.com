@@ -1,10 +1,16 @@
 .grading__steps{
     width: 65%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 7rem;
     padding-top: 2rem;
+    .grading__block{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 7rem;
+    }
     .grading__step{
         display: flex;
         flex-direction: column;
@@ -22,6 +28,10 @@
     .grading__steps{
         width: 100%;
         justify-content: center;
+        gap: 1.5rem;
+        .grading__block{
+            gap: 1.5rem;
+        }
         .grading__step{
             margin-bottom: 1rem;
             img{
@@ -33,10 +43,6 @@
 //Mobile screens
 @media only screen and (max-width: $tablet_bp){
     .grading__steps{
-        width: 100%;
         flex-direction: column;
-        .grading__step{
-            margin-bottom: 1rem;
-        }
     }
 }

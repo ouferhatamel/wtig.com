@@ -22,10 +22,16 @@
     .mainCnt__stepsIcns{
         width: 65%;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        gap: 1rem;
+        gap: 7rem;
         margin-top: 2rem;
+        .mainCnt__block{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 7rem;
+        }
         .mainCnt__stepsIcn{
             display: flex;
             flex-direction: column;
@@ -39,35 +45,24 @@
 }
 //RESPONSIVE
 
+// Laptop screens
 @media only screen and (max-width: $laptop_bp){
     .mainCnt__steps{
-        .mainCnt__steps__p{
-            width: 80%;
-            font-size: $m_size;
-            line-height: $m_lineHeigt;
-        }
-        .mainCnt__steps__p2{
-            width: 80%;
-            font-size: $m_size;
-            line-height: $m_lineHeigt;
-        }
         .mainCnt__stepsIcns{
             width: 80%;
-            display: flex;
-            justify-content:center;
-            align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
+            .mainCnt__block{
+                gap: 1.5rem;
+            }
             .mainCnt__stepsIcn{
                 img{
                     transform: scale(.8);
                 }
             }
         }
-    }
-    
+    } 
 }
-
-//Mobile screens
+// Mobile screens
 @media only screen and (max-width: $tablet_bp){
     .mainCnt__steps{
         .mainCnt__steps__p{
@@ -86,9 +81,6 @@
         flex-direction: column;
         .mainCnt__stepsIcn{
             margin-bottom: 1rem;
-           img{
-                transform: scale(1.5);
-            }
         }
     }
     

@@ -60,12 +60,8 @@
 }
 
 ::placeholder{
+    text-align: center;
     color: $dark_clr;
-    opacity: .8;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
 }
 
 //RESPONSIVE
