@@ -498,6 +498,7 @@
     padding: 2rem 4rem;
     display: flex;
     justify-content: space-between;
+    gap: 2rem;
 }
 .recap{
     width: 20rem;
@@ -557,8 +558,18 @@
     .submitCard__insurance{
         font-size: 1.1rem;
     }
+    .submitCard__left{
+        display: flex;
+        gap: 10rem;
+        .submitCard__deliveryAdress{
+            display: flex;
+            flex-direction: column;
+            img{
+                width : 20rem;
+            }
+        }
+    }
 }
-//Adress Form
 #orderInfo__adressForm{
     width: 40%;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -637,21 +648,21 @@
             padding: 2rem 0rem;
         }
     }
-}
-// Laptop and screens
-@media only screen and (max-width: $laptop_bp){
-    .searchCard{
-        .searchCard__c-game{
-            transform: scale(.7);
-        }
-        .searchCard__suggestions{
-            width: 40%;
+    #orderInfo__adressForm{
+        width: 90%;
+    }
+    .submitCard{
+        .submitCard__left{
+            gap: 2rem;
+            .submitCard__deliveryAdress{
+                img{
+                    width: 100%;
+                }
+            }
         }
     }
-    .cards{
-        ul{
-            width: 180%;
-        }
+    .recap{
+        width: 23rem;
     }
 }
 // Laptop and screens
@@ -674,11 +685,14 @@
 @media only screen and (max-width: 900px){
     .searchCard{
         .searchCard__ht{
+            width: 100%;
+            padding: 1rem 2rem;
             h2{
                 font-size: 1.2rem;
             }
         }
         .howTo{
+            width: 90%;
             p{
                 font-size: .9rem;
             }
@@ -689,10 +703,20 @@
                 font-size: $m_size;
             }
         }
+        .searchCard__select{
+            width: 100%;
+            gap: 1.5rem;
+        }
         .searchCard__input{
+            width: 50%;
+            display: flex;
             input{
                 font-size: .8rem;
             }
+        }
+        .searchCard__suggestions{
+            width: 60%;
+            padding: 2rem 0rem;
         }
         .suggestions__list{
             li{
@@ -702,7 +726,7 @@
     }
     .cards{
         ul{
-            width: 280%;
+            width: 270%;
             font-size: .9rem;
         }
     }
@@ -713,6 +737,7 @@
         align-items: center;
     }
     .recap{
+        width: 20rem;
         h3{
             font-size: 1.4rem;
         }
@@ -724,6 +749,16 @@
         align-items: center;
         .submitCard__insurance{
             font-size: $m_size;
+        }
+        .submitCard__left{
+            flex-direction: column;
+            align-items: center;
+            .submitCard__deliveryAdress{
+                flex-direction: row;
+                img{
+                    width : 14.5rem;
+                }
+            }
         }
     }
     #orderInfo__adressForm{
@@ -752,47 +787,19 @@
         padding: 0rem;
         .searchCard__ht{
             width: 90%;
-            padding: 1rem 2rem;
-            h2{
-                font-size: 1.3rem;
-            }
         }
         .howTo{
             width: 80%;
-            display: none;
-            p{
-                font-size: .9rem;
-                padding: 1rem;
-                margin-bottom: .8rem;
-                border-radius: 50px;
-                box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-            }
-            span{
-                font-weight: 300;
-                font-style: italic;
-            }
-            &--shown{
-                display: block;
-            }
         }
         .searchCard__c-game{
             gap: 1.5rem;
             transform: scale(.5);
         }
-        .searchCard__howTo{
-            width:100%;
-        }
-        .searchCard__select{
-            width: 100%;
-            gap: 1.5rem;
-        }
         .searchCard__input{
             width: 70%;
-            display: flex;
         }
         .searchCard__suggestions{
             width: 80%;
-            padding: 2rem 0rem;
         }
         .suggestions__list{
             li{
@@ -805,19 +812,25 @@
         padding: 1rem 2rem 2rem;
         ul{
             width: 350%;
-            font-size: .9rem;
             li{
                 padding: 1rem;
             }
         }
     }
-    .orderDtls{
-        width: 100%;
-        padding: 2rem 4rem;
-        flex-direction: column;
-        align-items: center;
-    }
     #orderInfo__adressForm{
         width: 20rem;
+    }
+    .submitCard{
+        .submitCard__left{
+            .submitCard__deliveryAdress{
+                flex-direction: column;
+                img{
+                    width : 16rem;
+                }
+            }
+        }
+    }
+    .recap{
+        width: 100%;
     }
 }

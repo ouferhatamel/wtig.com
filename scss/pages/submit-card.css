@@ -706,6 +706,7 @@ main {
   padding: 2rem 4rem;
   display: flex;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .recap {
@@ -765,6 +766,17 @@ main {
 }
 .submitCard .submitCard__insurance {
   font-size: 1.1rem;
+}
+.submitCard .submitCard__left {
+  display: flex;
+  gap: 10rem;
+}
+.submitCard .submitCard__left .submitCard__deliveryAdress {
+  display: flex;
+  flex-direction: column;
+}
+.submitCard .submitCard__left .submitCard__deliveryAdress img {
+  width: 20rem;
 }
 
 #orderInfo__adressForm {
@@ -840,16 +852,17 @@ main {
     width: 40%;
     padding: 2rem 0rem;
   }
-}
-@media only screen and (max-width: 1024px) {
-  .searchCard .searchCard__c-game {
-    transform: scale(0.7);
+  #orderInfo__adressForm {
+    width: 90%;
   }
-  .searchCard .searchCard__suggestions {
-    width: 40%;
+  .submitCard .submitCard__left {
+    gap: 2rem;
   }
-  .cards ul {
-    width: 180%;
+  .submitCard .submitCard__left .submitCard__deliveryAdress img {
+    width: 100%;
+  }
+  .recap {
+    width: 23rem;
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -864,8 +877,15 @@ main {
   }
 }
 @media only screen and (max-width: 900px) {
+  .searchCard .searchCard__ht {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
   .searchCard .searchCard__ht h2 {
     font-size: 1.2rem;
+  }
+  .searchCard .howTo {
+    width: 90%;
   }
   .searchCard .howTo p {
     font-size: 0.9rem;
@@ -876,14 +896,26 @@ main {
   .searchCard .searchCard__howTo h3 {
     font-size: 0.9rem;
   }
+  .searchCard .searchCard__select {
+    width: 100%;
+    gap: 1.5rem;
+  }
+  .searchCard .searchCard__input {
+    width: 50%;
+    display: flex;
+  }
   .searchCard .searchCard__input input {
     font-size: 0.8rem;
+  }
+  .searchCard .searchCard__suggestions {
+    width: 60%;
+    padding: 2rem 0rem;
   }
   .searchCard .suggestions__list li {
     font-size: 0.85rem;
   }
   .cards ul {
-    width: 280%;
+    width: 270%;
     font-size: 0.9rem;
   }
   .orderDtls {
@@ -891,6 +923,9 @@ main {
     padding: 2rem 4rem;
     flex-direction: column;
     align-items: center;
+  }
+  .recap {
+    width: 20rem;
   }
   .recap h3 {
     font-size: 1.4rem;
@@ -903,6 +938,16 @@ main {
   }
   .submitCard .submitCard__insurance {
     font-size: 0.9rem;
+  }
+  .submitCard .submitCard__left {
+    flex-direction: column;
+    align-items: center;
+  }
+  .submitCard .submitCard__left .submitCard__deliveryAdress {
+    flex-direction: row;
+  }
+  .submitCard .submitCard__left .submitCard__deliveryAdress img {
+    width: 14.5rem;
   }
   #orderInfo__adressForm {
     width: 20rem;
@@ -928,47 +973,19 @@ main {
   }
   .searchCard .searchCard__ht {
     width: 90%;
-    padding: 1rem 2rem;
-  }
-  .searchCard .searchCard__ht h2 {
-    font-size: 1.3rem;
   }
   .searchCard .howTo {
     width: 80%;
-    display: none;
-  }
-  .searchCard .howTo p {
-    font-size: 0.9rem;
-    padding: 1rem;
-    margin-bottom: 0.8rem;
-    border-radius: 50px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  }
-  .searchCard .howTo span {
-    font-weight: 300;
-    font-style: italic;
-  }
-  .searchCard .howTo--shown {
-    display: block;
   }
   .searchCard .searchCard__c-game {
     gap: 1.5rem;
     transform: scale(0.5);
   }
-  .searchCard .searchCard__howTo {
-    width: 100%;
-  }
-  .searchCard .searchCard__select {
-    width: 100%;
-    gap: 1.5rem;
-  }
   .searchCard .searchCard__input {
     width: 70%;
-    display: flex;
   }
   .searchCard .searchCard__suggestions {
     width: 80%;
-    padding: 2rem 0rem;
   }
   .searchCard .suggestions__list li {
     gap: 2rem;
@@ -979,19 +996,21 @@ main {
   }
   .cards ul {
     width: 350%;
-    font-size: 0.9rem;
   }
   .cards ul li {
     padding: 1rem;
   }
-  .orderDtls {
-    width: 100%;
-    padding: 2rem 4rem;
-    flex-direction: column;
-    align-items: center;
-  }
   #orderInfo__adressForm {
     width: 20rem;
+  }
+  .submitCard .submitCard__left .submitCard__deliveryAdress {
+    flex-direction: column;
+  }
+  .submitCard .submitCard__left .submitCard__deliveryAdress img {
+    width: 16rem;
+  }
+  .recap {
+    width: 100%;
   }
 }
 .mnFtr {
