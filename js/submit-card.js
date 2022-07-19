@@ -6,10 +6,10 @@ const cardContainer = document.querySelector('.cards__list');
 const numbCards = document.getElementById('recap__cardNumb');
 
 const cardPrice = document.getElementById('recap__cardsPrice');
-const deliveryPrice = document.getElementById('recap__delivery');
+const deliveryP = document.getElementById('recap__delivery');
 const totalPrice = document.getElementById('recap__total');
 const validateCnt = document.querySelector('.submitCard');
-//const insuranceCheck = document.getElementById('submit__insurance');
+
 const insrPrice = document.getElementById('recap__insurance');
 const loader = document.querySelector('.suggestions__loader');
 const inputCnt = document.querySelector('.searchCard__input');
@@ -23,9 +23,9 @@ const yuLabel = document.querySelector('.c-game__yu label');
 let extension = '';
 let cardNumber = 0;
 let crdPrice = 0;
-let unitPrice = 10.15;
-let delivery = 10;
-let insurance = 5;
+let unitPrice = 12;
+let delivery = 0;
+let insurance = 0;
 let total = 0;
 
 //-----------SEARCH CARDS------------
@@ -231,23 +231,20 @@ function printData(data, inputD, g_flag){
             
             suggList.appendChild(item);
 
-            console.log(suggList)
-            //ADDING TO THE ORDER LIST
+            // Adding the card to the order list
             const addItemBtn = item.querySelector('.cardInfo__addBasket');
             console.log(addItemBtn)
             addItemBtn.addEventListener('click', addItem);
         }
     });
 
+    // Adding a go to search bar button
     const btn = document.createElement('a');
     btn.setAttribute('href', "#searchBar");
     btn.setAttribute('id', "search_again");
 
     btn.textContent = "buscar de nuevo";
     suggList.appendChild(btn);
-    /* suggList.innerHTML += `
-        <a href="#searchBar" id="search_again">buscar de nuevo</a>
-    `; */
     
     if(!containFlag){
         inputMsg.textContent = 'No existe tal carta. Asegúrese de que el nombre está escrito correctamente.';
@@ -265,7 +262,6 @@ function printData(data, inputD, g_flag){
 //Add a card to the order list
 function addItem(e){
 
-    console.log('Hello from add');
     //Retreive data from the selected card
     const card = e.currentTarget.parentElement;
     const cardName = card.querySelector('.cardInfo__name').textContent;
@@ -312,7 +308,7 @@ function addItem(e){
                 <div class="certlang__stroke"></div>
             </div>
             <div class="card__value">
-                <input type="number" id="card__value">
+                <input type="number" id="card__value" name="adressForm" required>
                 <span>€</span>
             </div>
             <div class="card__noNotation">
@@ -367,14 +363,8 @@ function addItem(e){
     cardPrice.innerHTML= `${crdPrice} €`;
 
     //Update delivery price
-    if(cardNumber > 0)
-    deliveryPrice.innerHTML = `${delivery} €`;
-
-    //Update insurance price
-    insrPrice.innerHTML= `${insurance} €`;
-    //Check if insurance is checked and add it to the invoice
-    //insuranceCheck.addEventListener('change', insurranceChecker);
-
+    deliveryP.innerHTML= `${deliveryPrice()} €`;
+    
     //Update the total
     total = TotalCalc();
     totalPrice.innerHTML = `${total} €`;
@@ -439,19 +429,26 @@ function clearList(){
 //Delete a card from the order list
 function deleteCard(e){
     const item = e.currentTarget.parentElement.parentElement;
-    console.log(item);
+
     cardContainer.removeChild(item);
-    //update the number of cards
+
+    // Update the number of cards
     cardNumber--;
     numbCards.innerHTML = `${cardNumber} cartas`;
+
     //Update the price of the cards
     crdPrice = priceOfCards();
     cardPrice.innerHTML= `${crdPrice} €`;
-    //Update delivery price
+
+    // Update the delivery price
+    deliveryP.innerHTML= `${deliveryPrice()} €`;
+    console.log(delivery);
+
+    
     if(cardNumber < 1)
         deliveryPrice.innerHTML = `0 €`;
     
-    //Update the total
+    // Update the total
     total = TotalCalc();
     totalPrice.innerHTML = `${total} €`;
 }
@@ -473,11 +470,39 @@ function priceOfCards(){
         }
     }else{
         offerTxt.style.display = 'none';
-        unitPrice = 10.15;
+        unitPrice = 12;
     }
     console.log(unitPrice);
     let c_price = cardNumber*unitPrice;
     return parseFloat(c_price.toFixed(2));
+}
+function deliveryPrice(){
+
+    // The number of a group of 20 cards -> 4 boxes -> group of 2 kg
+    let groupNumber = Math.floor(cardNumber / 20);
+    
+    // number of cards from 1 to 20 (after the 20*n group)
+    let nbCrd = cardNumber - (groupNumber * 20);
+
+    if(cardNumber == 0) {
+        delivery = 0;
+    }
+    else{
+        if (nbCrd == 0){
+            delivery = 26 * groupNumber;
+        }
+        if (nbCrd <= 5 && nbCrd > 0){
+            delivery = 26 * groupNumber + 11.7;
+        }
+        else if (nbCrd > 5 && nbCrd <= 10){
+            delivery = 26 * groupNumber + 18.1;
+        }
+        else if (nbCrd > 10 && nbCrd <= 20){
+            delivery = 26 * groupNumber + 26;
+        }
+    }
+
+    return delivery;
 }
 function TotalCalc(){
     if(cardNumber < 1){
@@ -485,26 +510,11 @@ function TotalCalc(){
         
     }else{
         let c_price = priceOfCards();
+        delivery = deliveryPrice();
         return (c_price + delivery + insurance).toFixed(2);
     }
         
 }
-/* function insurranceChecker(e){
-    if(e.target.checked){
-        console.log(insurance);
-        insurance=9.48;
-        insrPrice.innerHTML = `${insurance} €`;
-        total = TotalCalc();
-        totalPrice.innerHTML = `${total} €`;
-    }else{
-        insurance=0;
-        insrPrice.innerHTML = `${insurance} €`;
-        total = TotalCalc();
-        totalPrice.innerHTML = `${total} €`;
-    }
-        
-} */
-
 // Get adress info
 function getAdress(){
     const adressForm = document.getElementById('adressForm');
