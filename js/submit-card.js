@@ -234,14 +234,21 @@ function printData(data, inputD, g_flag){
             console.log(suggList)
             //ADDING TO THE ORDER LIST
             const addItemBtn = item.querySelector('.cardInfo__addBasket');
-            addItemBtn.addEventListener('click',addItem);
+            console.log(addItemBtn)
+            addItemBtn.addEventListener('click', addItem);
         }
     });
 
-    suggList.innerHTML += `
-        <a href="#searchBar" id="search_again">buscar de nuevo</a>
-    `;
+    const btn = document.createElement('a');
+    btn.setAttribute('href', "#searchBar");
+    btn.setAttribute('id', "search_again");
 
+    btn.textContent = "buscar de nuevo";
+    suggList.appendChild(btn);
+    /* suggList.innerHTML += `
+        <a href="#searchBar" id="search_again">buscar de nuevo</a>
+    `; */
+    
     if(!containFlag){
         inputMsg.textContent = 'No existe tal carta. Asegúrese de que el nombre está escrito correctamente.';
         inputMsg.style.display = 'inherit';
@@ -258,6 +265,7 @@ function printData(data, inputD, g_flag){
 //Add a card to the order list
 function addItem(e){
 
+    console.log('Hello from add');
     //Retreive data from the selected card
     const card = e.currentTarget.parentElement;
     const cardName = card.querySelector('.cardInfo__name').textContent;

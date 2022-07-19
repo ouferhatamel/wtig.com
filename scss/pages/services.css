@@ -269,7 +269,9 @@ main {
   gap: 3rem;
 }
 #tarifs p {
+  width: 80%;
   font-size: 1.1rem;
+  text-align: center;
 }
 
 .tarifs__offers {
