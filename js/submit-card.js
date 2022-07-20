@@ -29,7 +29,7 @@ let insurance = 0;
 let total = 0;
 
 //-----------SEARCH CARDS------------
-//Search cards
+// Search cards
 const searchBtn = document.querySelector('.searchCard__search');
 searchBtn.addEventListener('click', getCards);
 
@@ -42,21 +42,21 @@ searchInput.onkeyup = (e)=>{
         
 };
 
-//Empty the search results 
+// Empty the search results 
 searchInput.onkeydown = clearList;
 
-//Load countries on the adress form
+// Load countries on the adress form
 const countrySelect = document.getElementById('county');
 document.addEventListener('DOMContentLoaded', getCountries);
 
-//Show howTo explanation
+// Show howTo explanation
 const show_howTo = document.querySelector('.searchCard__howTo h3');
 show_howTo.addEventListener('click', ()=>{
     const howTo = document.querySelector('.howTo');
     howTo.classList.toggle('howTo--shown');
 });
 
-//Card game Radio click
+// Card game Radio click
 const pokeGame = document.getElementById('pokemon-game');
 pokeGame.addEventListener('click', ()=>{
     pokeLabel.style.opacity = '1';
@@ -76,14 +76,14 @@ yuGame.addEventListener('click', ()=>{
     pokeLabel.style.opacity = '.5';
 });
 
-//Store order info on local storage
+// Store order info on local storage
 const adressForm = document.getElementById('adressForm');
 adressForm.addEventListener('submit', checkout)
 
 ///////////////////
 //FUNCTIONS////////
 ///////////////////
-//Fetching cards from the pokemon, Magic the gathering and the Yu gi oh APIs
+// Fetching cards from the pokemon, Magic the gathering and the Yu gi oh APIs
 async function getCards(){
 
     //Check if a card game is chosen
@@ -170,7 +170,7 @@ async function getCards(){
         }
     }
 }
-//Print the search result
+// Print the search result
 function printData(data, inputD, g_flag){ 
 
     let containFlag = false; //When it equals to true, means that at least one card has been found
@@ -233,7 +233,6 @@ function printData(data, inputD, g_flag){
 
             // Adding the card to the order list
             const addItemBtn = item.querySelector('.cardInfo__addBasket');
-            console.log(addItemBtn)
             addItemBtn.addEventListener('click', addItem);
         }
     });
@@ -259,7 +258,7 @@ function printData(data, inputD, g_flag){
         loader.style.display = 'none';
     }
 }
-//Add a card to the order list
+// Add a card to the order list
 function addItem(e){
 
     //Retreive data from the selected card
@@ -271,7 +270,6 @@ function addItem(e){
     //Create the card element
     const cardElement = document.createElement('li');
     let attr = document.createAttribute('class');
-    //const id = new Date().getTime().toString();
     attr.value = "cardItem";
     cardElement.setAttributeNode(attr);
     cardElement.innerHTML = `
@@ -308,7 +306,7 @@ function addItem(e){
                 <div class="certlang__stroke"></div>
             </div>
             <div class="card__value">
-                <input type="number" id="card__value" name="adressForm" required>
+                <input type="number" class="card__declaredValue" value="0" required>
                 <span>€</span>
             </div>
             <div class="card__noNotation">
@@ -365,6 +363,12 @@ function addItem(e){
     //Update delivery price
     deliveryP.innerHTML= `${deliveryPrice()} €`;
     
+    // Update the insurance price
+    insrPrice.innerHTML= `${insurancePrice().toFixed(2)} €`;
+
+    // Update insurance when value is changed
+    updateInsurance();
+
     //Update the total
     total = TotalCalc();
     totalPrice.innerHTML = `${total} €`;
@@ -421,12 +425,12 @@ function addItem(e){
     //Show the Validate container
     validateCnt.classList.add('submitCard--active');
 }
-//Clear the search results list when input data is eraised
+// Clear the search results list when input data is eraised
 function clearList(){
     if(!searchInput.value)
         suggList.innerHTML= '';
 }
-//Delete a card from the order list
+// Delete a card from the order list
 function deleteCard(e){
     const item = e.currentTarget.parentElement.parentElement;
 
@@ -442,8 +446,9 @@ function deleteCard(e){
 
     // Update the delivery price
     deliveryP.innerHTML= `${deliveryPrice()} €`;
-    console.log(delivery);
 
+    // Update the insurance price
+    insrPrice.innerHTML= `${insurancePrice().toFixed(2)} €`;
     
     if(cardNumber < 1)
         deliveryPrice.innerHTML = `0 €`;
@@ -454,7 +459,7 @@ function deleteCard(e){
 }
 function priceOfCards(){
     const offerTxt = document.querySelector('.recap__head span');
-    if(cardNumber >= 10){
+    if (cardNumber >= 10){
         offerTxt.textContent = 'Oferta 01'
         offerTxt.style.display = 'inherit';
         unitPrice = 9.95;
@@ -468,12 +473,14 @@ function priceOfCards(){
                 unitPrice = 8.95;
             }
         }
-    }else{
+    }
+    else {
         offerTxt.style.display = 'none';
         unitPrice = 12;
     }
-    console.log(unitPrice);
+
     let c_price = cardNumber*unitPrice;
+
     return parseFloat(c_price.toFixed(2));
 }
 function deliveryPrice(){
@@ -504,6 +511,31 @@ function deliveryPrice(){
 
     return delivery;
 }
+function insurancePrice(){
+    let total = 0;
+    let values = cardContainer.querySelectorAll('.card__declaredValue');
+
+    values.forEach(val => {
+        total = total + Number(val.value);
+    });
+
+    insurance = (total * 0.056);
+
+    return insurance;
+}
+function updateInsurance(){
+    let values = cardContainer.querySelectorAll('.card__declaredValue');
+
+    values.forEach(val => {
+        val.addEventListener('change', (e)=>{
+            insrPrice.innerHTML= `${insurancePrice().toFixed(2)} €`;
+
+            // Update the total
+            total = TotalCalc();
+            totalPrice.innerHTML = `${total} €`;
+        })
+    })
+}
 function TotalCalc(){
     if(cardNumber < 1){
         return 0;
@@ -511,6 +543,7 @@ function TotalCalc(){
     }else{
         let c_price = priceOfCards();
         delivery = deliveryPrice();
+        insurance = insurancePrice();
         return (c_price + delivery + insurance).toFixed(2);
     }
         
