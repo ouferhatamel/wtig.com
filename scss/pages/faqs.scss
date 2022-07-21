@@ -1,0 +1,81 @@
+@import '../helpers/variables';
+@import '../helpers/basics';
+@import '../layouts/navBar';
+@import '../layouts/footer';
+
+body{
+    background-image: url("../../images/others/wytgrd-logo-pattern.jpg");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main{
+    width: 50%;
+    margin-top: 10rem;
+    padding-bottom: 5rem;
+    h1{
+        text-align: center;
+    }
+    .qstBlock{
+        text-align: center;
+        margin: 2rem 0;
+    }
+    .question{
+        line-height: 1.6;
+        font-weight: 400;
+        border-bottom: .5px solid $light_clr;
+        padding: .8rem 0;
+        .questionTitle{
+            display: flex;
+            justify-content: space-between;
+            img{
+                width: 1rem;
+                transform: rotate(180deg);
+                cursor: pointer;
+                
+            }
+            .opened{
+                transform: rotate(0deg);
+            }
+        }
+        h3{
+            font-weight: 900;
+        }
+        p{
+            display: none;
+        }
+        .shown{
+            display: block;
+        }
+        ol, ul{
+            display: none;
+            list-style-position: inside;
+            li{
+                margin-left: 1rem;
+            }
+        }
+    }
+}
+
+//RESPONSIVE
+
+@media only screen and (max-width: 500px){
+    main{
+        width: 70%;
+        h1{
+            font-size: 2rem;
+        }
+        .qstBlock{
+            font-size: 1.2rem;
+        }
+        .question{
+            h3{
+                font-size: 1rem;
+            }
+            p{
+                font-size: $m_size;
+            }
+        }
+    }
+}
+
