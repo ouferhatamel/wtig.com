@@ -39,7 +39,8 @@ main{
             }
         }
         h3{
-            font-weight: 900;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
         p{
             display: none;
@@ -53,6 +54,9 @@ main{
             li{
                 margin-left: 1rem;
             }
+        }
+        .opened{
+            display: block;
         }
     }
 }
@@ -74,6 +78,11 @@ main{
             }
             p{
                 font-size: $m_size;
+            }
+            ol, ul{
+                li{
+                    font-size: $m_size;
+                }
             }
         }
     }

@@ -363,7 +363,8 @@ main .question .questionTitle .opened {
   transform: rotate(0deg);
 }
 main .question h3 {
-  font-weight: 900;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 main .question p {
   display: none;
@@ -377,6 +378,9 @@ main .question ol, main .question ul {
 }
 main .question ol li, main .question ul li {
   margin-left: 1rem;
+}
+main .question .opened {
+  display: block;
 }
 
 @media only screen and (max-width: 500px) {
@@ -393,6 +397,9 @@ main .question ol li, main .question ul li {
     font-size: 1rem;
   }
   main .question p {
+    font-size: 0.9rem;
+  }
+  main .question ol li, main .question ul li {
     font-size: 0.9rem;
   }
 }/*# sourceMappingURL=faqs.css.map */
