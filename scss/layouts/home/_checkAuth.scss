@@ -70,6 +70,7 @@
 @media only screen and (max-width: $tablet_bp){
     #checkAuth{
         font-size: .8rem;
+        background-attachment: initial;
         .checkAuth__checkBtn{
             width: 18rem;
             height: 6rem;

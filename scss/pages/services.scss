@@ -43,6 +43,7 @@ header{
 @media only screen and (max-width: $desktop_bp){
     header{
         height: 40vh;
+        background-attachment: initial;
         background-position: left;
         margin-top: 3rem;
         h1{

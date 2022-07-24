@@ -558,6 +558,7 @@ a {
 @media only screen and (max-width: 768px) {
   #checkAuth {
     font-size: 0.8rem;
+    background-attachment: initial;
   }
   #checkAuth .checkAuth__checkBtn {
     width: 18rem;
