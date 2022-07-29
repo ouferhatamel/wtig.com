@@ -28,6 +28,7 @@ let delivery = 0;
 let insurance = 0;
 let total = 0;
 
+
 //-----------SEARCH CARDS------------
 // Search cards
 const searchBtn = document.querySelector('.searchCard__search');
@@ -306,7 +307,7 @@ function addItem(e){
                 <div class="certlang__stroke"></div>
             </div>
             <div class="card__value">
-                <input type="number" class="card__declaredValue" value="0" required>
+                <input id="card__value" type="number" class="card__declaredValue" value="0" required>
                 <span>€</span>
             </div>
             <div class="card__noNotation">
